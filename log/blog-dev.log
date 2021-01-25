@@ -1,565 +1,285 @@
-2021-01-19 09:31:34.606  INFO 9784 --- [restartedMain] com.fly.myblog.MyblogApplication         : Starting MyblogApplication on DESKTOP-HML8KQ7 with PID 9784 (started by 集联科技 in D:\搜狗高速下载\github_projects\myblog)
-2021-01-19 09:31:34.606 DEBUG 9784 --- [restartedMain] com.fly.myblog.MyblogApplication         : Running with Spring Boot v2.2.5.RELEASE, Spring v5.2.4.RELEASE
-2021-01-19 09:31:34.606  INFO 9784 --- [restartedMain] com.fly.myblog.MyblogApplication         : The following profiles are active: dev
-2021-01-19 09:31:34.638  INFO 9784 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2021-01-19 09:31:34.638  INFO 9784 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2021-01-19 09:31:36.174  INFO 9784 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-2021-01-19 09:31:36.190  INFO 9784 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2021-01-19 09:31:36.190  INFO 9784 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.31]
-2021-01-19 09:31:36.237  INFO 9784 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2021-01-19 09:31:36.237  INFO 9784 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1599 ms
-2021-01-19 09:31:36.992  INFO 9784 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
-2021-01-19 09:31:37.070  INFO 9784 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
-2021-01-19 09:31:37.523  INFO 9784 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2021-01-19 09:31:37.578  INFO 9784 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
-2021-01-19 09:31:37.580  INFO 9784 --- [restartedMain] com.fly.myblog.MyblogApplication         : Started MyblogApplication in 3.87 seconds (JVM running for 6.006)
-2021-01-19 09:41:28.664  INFO 9784 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2021-01-19 09:41:28.665  INFO 9784 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2021-01-19 09:41:28.678  INFO 9784 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 13 ms
-2021-01-19 09:41:34.404  INFO 9784 --- [http-nio-8080-exec-4] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2021-01-19 09:41:34.653  INFO 9784 --- [http-nio-8080-exec-4] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2021-01-19 09:41:34.665 DEBUG 9784 --- [http-nio-8080-exec-4] c.f.m.d.U.findByUsernameAndPassword      : ==>  Preparing: select * from myblog.t_user where username = ? and password = ?
-2021-01-19 09:41:34.689 DEBUG 9784 --- [http-nio-8080-exec-4] c.f.m.d.U.findByUsernameAndPassword      : ==> Parameters: admin(String), e10adc3949ba59abbe56e057f20f883e(String)
-2021-01-19 09:41:34.724 DEBUG 9784 --- [http-nio-8080-exec-4] c.f.m.d.U.findByUsernameAndPassword      : <==      Total: 1
-2021-01-19 09:41:34.897  INFO 9784 --- [http-nio-8080-exec-10] com.fly.myblog.Aspect.LogAspect          : Request: RequestLog{url='http://localhost:8080/footer/blogmessage', ip='0:0:0:0:0:0:0:1', classMethod='com.fly.myblog.controller.IndexController.blogMessage', args=[{}]}
-2021-01-19 09:41:34.945 DEBUG 9784 --- [http-nio-8080-exec-10] com.fly.myblog.dao.BlogDao.getBlogTotal  : ==>  Preparing: select count(*) from myblog.t_blog
-2021-01-19 09:41:34.946 DEBUG 9784 --- [http-nio-8080-exec-10] com.fly.myblog.dao.BlogDao.getBlogTotal  : ==> Parameters: 
-2021-01-19 09:41:34.949 DEBUG 9784 --- [http-nio-8080-exec-10] com.fly.myblog.dao.BlogDao.getBlogTotal  : <==      Total: 1
-2021-01-19 09:41:34.953 DEBUG 9784 --- [http-nio-8080-exec-10] c.f.myblog.dao.BlogDao.getBlogViewTotal  : ==>  Preparing: select coalesce (sum(views),0) from myblog.t_blog
-2021-01-19 09:41:34.953 DEBUG 9784 --- [http-nio-8080-exec-10] c.f.myblog.dao.BlogDao.getBlogViewTotal  : ==> Parameters: 
-2021-01-19 09:41:34.955 DEBUG 9784 --- [http-nio-8080-exec-10] c.f.myblog.dao.BlogDao.getBlogViewTotal  : <==      Total: 1
-2021-01-19 09:41:34.958 DEBUG 9784 --- [http-nio-8080-exec-10] c.f.m.dao.BlogDao.getBlogCommentTotal    : ==>  Preparing: select count(*) from myblog.t_comment
-2021-01-19 09:41:34.958 DEBUG 9784 --- [http-nio-8080-exec-10] c.f.m.dao.BlogDao.getBlogCommentTotal    : ==> Parameters: 
-2021-01-19 09:41:34.961 DEBUG 9784 --- [http-nio-8080-exec-10] c.f.m.dao.BlogDao.getBlogCommentTotal    : <==      Total: 1
-2021-01-19 09:41:34.964 DEBUG 9784 --- [http-nio-8080-exec-10] c.f.m.dao.BlogDao.getBlogMessageTotal    : ==>  Preparing: select count(*) from myblog.t_message
-2021-01-19 09:41:34.964 DEBUG 9784 --- [http-nio-8080-exec-10] c.f.m.dao.BlogDao.getBlogMessageTotal    : ==> Parameters: 
-2021-01-19 09:41:34.967 DEBUG 9784 --- [http-nio-8080-exec-10] c.f.m.dao.BlogDao.getBlogMessageTotal    : <==      Total: 1
-2021-01-19 09:41:34.969  INFO 9784 --- [http-nio-8080-exec-10] com.fly.myblog.Aspect.LogAspect          : ------doAfter-------
-2021-01-19 09:41:34.969  INFO 9784 --- [http-nio-8080-exec-10] com.fly.myblog.Aspect.LogAspect          : Result : index :: blogMessage
-2021-01-19 09:42:38.391 DEBUG 9784 --- [http-nio-8080-exec-1] c.f.myblog.dao.BlogDao.getAllBlog_COUNT  : ==>  Preparing: SELECT count(0) FROM myblog.t_blog b LEFT JOIN myblog.t_type t ON b.type_id = t.id
-2021-01-19 09:42:38.392 DEBUG 9784 --- [http-nio-8080-exec-1] c.f.myblog.dao.BlogDao.getAllBlog_COUNT  : ==> Parameters: 
-2021-01-19 09:42:38.394 DEBUG 9784 --- [http-nio-8080-exec-1] c.f.myblog.dao.BlogDao.getAllBlog_COUNT  : <==      Total: 1
-2021-01-19 09:42:38.400 DEBUG 9784 --- [http-nio-8080-exec-1] com.fly.myblog.dao.BlogDao.getAllBlog    : ==>  Preparing: SELECT b.id, b.title, b.update_time, b.recommend, b.published, b.type_id, t.id, t.name FROM myblog.t_blog b LEFT JOIN myblog.t_type t ON b.type_id = t.id order by update_time desc LIMIT ?
-2021-01-19 09:42:38.401 DEBUG 9784 --- [http-nio-8080-exec-1] com.fly.myblog.dao.BlogDao.getAllBlog    : ==> Parameters: 10(Integer)
-2021-01-19 09:42:38.409 DEBUG 9784 --- [http-nio-8080-exec-1] com.fly.myblog.dao.BlogDao.getAllBlog    : <==      Total: 4
-2021-01-19 09:42:38.420 DEBUG 9784 --- [http-nio-8080-exec-1] com.fly.myblog.dao.TypeDao.getAllType    : ==>  Preparing: select * from myblog.t_type
-2021-01-19 09:42:38.421 DEBUG 9784 --- [http-nio-8080-exec-1] com.fly.myblog.dao.TypeDao.getAllType    : ==> Parameters: 
-2021-01-19 09:42:38.422 DEBUG 9784 --- [http-nio-8080-exec-1] com.fly.myblog.dao.TypeDao.getAllType    : <==      Total: 2
-2021-01-19 09:42:38.555  INFO 9784 --- [http-nio-8080-exec-5] com.fly.myblog.Aspect.LogAspect          : Request: RequestLog{url='http://localhost:8080/footer/blogmessage', ip='0:0:0:0:0:0:0:1', classMethod='com.fly.myblog.controller.IndexController.blogMessage', args=[{}]}
-2021-01-19 09:42:38.555 DEBUG 9784 --- [http-nio-8080-exec-5] com.fly.myblog.dao.BlogDao.getBlogTotal  : ==>  Preparing: select count(*) from myblog.t_blog
-2021-01-19 09:42:38.556 DEBUG 9784 --- [http-nio-8080-exec-5] com.fly.myblog.dao.BlogDao.getBlogTotal  : ==> Parameters: 
-2021-01-19 09:42:38.558 DEBUG 9784 --- [http-nio-8080-exec-5] com.fly.myblog.dao.BlogDao.getBlogTotal  : <==      Total: 1
-2021-01-19 09:42:38.560 DEBUG 9784 --- [http-nio-8080-exec-5] c.f.myblog.dao.BlogDao.getBlogViewTotal  : ==>  Preparing: select coalesce (sum(views),0) from myblog.t_blog
-2021-01-19 09:42:38.560 DEBUG 9784 --- [http-nio-8080-exec-5] c.f.myblog.dao.BlogDao.getBlogViewTotal  : ==> Parameters: 
-2021-01-19 09:42:38.561 DEBUG 9784 --- [http-nio-8080-exec-5] c.f.myblog.dao.BlogDao.getBlogViewTotal  : <==      Total: 1
-2021-01-19 09:42:38.562 DEBUG 9784 --- [http-nio-8080-exec-5] c.f.m.dao.BlogDao.getBlogCommentTotal    : ==>  Preparing: select count(*) from myblog.t_comment
-2021-01-19 09:42:38.563 DEBUG 9784 --- [http-nio-8080-exec-5] c.f.m.dao.BlogDao.getBlogCommentTotal    : ==> Parameters: 
-2021-01-19 09:42:38.564 DEBUG 9784 --- [http-nio-8080-exec-5] c.f.m.dao.BlogDao.getBlogCommentTotal    : <==      Total: 1
-2021-01-19 09:42:38.566 DEBUG 9784 --- [http-nio-8080-exec-5] c.f.m.dao.BlogDao.getBlogMessageTotal    : ==>  Preparing: select count(*) from myblog.t_message
-2021-01-19 09:42:38.566 DEBUG 9784 --- [http-nio-8080-exec-5] c.f.m.dao.BlogDao.getBlogMessageTotal    : ==> Parameters: 
-2021-01-19 09:42:38.567 DEBUG 9784 --- [http-nio-8080-exec-5] c.f.m.dao.BlogDao.getBlogMessageTotal    : <==      Total: 1
-2021-01-19 09:42:38.568  INFO 9784 --- [http-nio-8080-exec-5] com.fly.myblog.Aspect.LogAspect          : ------doAfter-------
-2021-01-19 09:42:38.568  INFO 9784 --- [http-nio-8080-exec-5] com.fly.myblog.Aspect.LogAspect          : Result : index :: blogMessage
-2021-01-19 09:42:41.972 DEBUG 9784 --- [http-nio-8080-exec-6] com.fly.myblog.dao.BlogDao.search        : ==>  Preparing: select b.id,b.title,b.update_time,b.recommend,b.type_id,t.id,t.name from myblog.t_blog b ,myblog.t_type t where b.type_id = t.id and b.title like ?
-2021-01-19 09:42:41.973 DEBUG 9784 --- [http-nio-8080-exec-6] com.fly.myblog.dao.BlogDao.search        : ==> Parameters: 程序员(String)
-2021-01-19 09:42:41.974 DEBUG 9784 --- [http-nio-8080-exec-6] com.fly.myblog.dao.BlogDao.search        : <==      Total: 1
-2021-01-19 09:45:42.132  INFO 1584 --- [restartedMain] com.fly.myblog.MyblogApplication         : Starting MyblogApplication on DESKTOP-HML8KQ7 with PID 1584 (started by 集联科技 in D:\搜狗高速下载\github_projects\myblog)
-2021-01-19 09:45:42.138 DEBUG 1584 --- [restartedMain] com.fly.myblog.MyblogApplication         : Running with Spring Boot v2.2.5.RELEASE, Spring v5.2.4.RELEASE
-2021-01-19 09:45:42.138  INFO 1584 --- [restartedMain] com.fly.myblog.MyblogApplication         : The following profiles are active: dev
-2021-01-19 09:45:42.163  INFO 1584 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2021-01-19 09:45:42.163  INFO 1584 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2021-01-19 09:45:42.920  INFO 1584 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-2021-01-19 09:45:42.920  INFO 1584 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2021-01-19 09:45:42.920  INFO 1584 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.31]
-2021-01-19 09:45:42.967  INFO 1584 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2021-01-19 09:45:42.967  INFO 1584 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 804 ms
-2021-01-19 09:45:43.402  INFO 1584 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
-2021-01-19 09:45:43.459  INFO 1584 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
-2021-01-19 09:45:43.682  INFO 1584 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2021-01-19 09:45:43.705  INFO 1584 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
-2021-01-19 09:45:43.705  INFO 1584 --- [restartedMain] com.fly.myblog.MyblogApplication         : Started MyblogApplication in 2.055 seconds (JVM running for 2.824)
-2021-01-19 09:46:24.391  INFO 1584 --- [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2021-01-19 09:46:24.392  INFO 1584 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2021-01-19 09:46:24.402  INFO 1584 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 10 ms
-2021-01-19 09:46:27.040  INFO 1584 --- [http-nio-8080-exec-4] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2021-01-19 09:46:27.198  INFO 1584 --- [http-nio-8080-exec-4] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2021-01-19 09:46:27.251 DEBUG 1584 --- [http-nio-8080-exec-4] com.fly.myblog.dao.BlogDao.search        : ==>  Preparing: select b.id,b.title,b.update_time,b.recommend,b.type_id,t.id,t.name from myblog.t_blog b ,myblog.t_type t where b.type_id = t.id and b.title like ?
-2021-01-19 09:46:27.282 DEBUG 1584 --- [http-nio-8080-exec-4] com.fly.myblog.dao.BlogDao.search        : ==> Parameters: 程序员(String)
-2021-01-19 09:46:27.311 DEBUG 1584 --- [http-nio-8080-exec-4] com.fly.myblog.dao.BlogDao.search        : <==      Total: 1
-2021-01-19 09:46:27.692 ERROR 1584 --- [http-nio-8080-exec-4] org.thymeleaf.TemplateEngine             : [THYMELEAF][http-nio-8080-exec-4] Exception processing template "admin/blogs": An error happened during template parsing (template: "class path resource [templates/admin/blogs.html]")
-
-org.thymeleaf.exceptions.TemplateInputException: An error happened during template parsing (template: "class path resource [templates/admin/blogs.html]")
-	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parse(AbstractMarkupTemplateParser.java:241)
-	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parseStandalone(AbstractMarkupTemplateParser.java:100)
-	at org.thymeleaf.engine.TemplateManager.parseAndProcess(TemplateManager.java:666)
-	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1098)
-	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1072)
-	at org.thymeleaf.spring5.view.ThymeleafView.renderFragment(ThymeleafView.java:362)
-	at org.thymeleaf.spring5.view.ThymeleafView.render(ThymeleafView.java:189)
-	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1373)
-	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1118)
-	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1057)
-	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943)
-	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
-	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:634)
-	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
-	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
-	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
-	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
-	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
-	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
-	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
-	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
-	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
-	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
-	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
-	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
-	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:367)
-	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
-	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868)
-	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1639)
-	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
-	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
-	at java.lang.Thread.run(Thread.java:748)
-Caused by: org.attoparser.ParseException: Exception evaluating SpringEL expression: "session.user.avatar" (template: "admin/blogs" - line 25, col 78)
-	at org.attoparser.MarkupParser.parseDocument(MarkupParser.java:393)
-	at org.attoparser.MarkupParser.parse(MarkupParser.java:257)
-	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parse(AbstractMarkupTemplateParser.java:230)
-	... 48 common frames omitted
-Caused by: org.thymeleaf.exceptions.TemplateProcessingException: Exception evaluating SpringEL expression: "session.user.avatar" (template: "admin/blogs" - line 25, col 78)
-	at org.thymeleaf.spring5.expression.SPELVariableExpressionEvaluator.evaluate(SPELVariableExpressionEvaluator.java:290)
-	at org.thymeleaf.standard.expression.VariableExpression.executeVariableExpression(VariableExpression.java:166)
-	at org.thymeleaf.standard.expression.SimpleExpression.executeSimple(SimpleExpression.java:66)
-	at org.thymeleaf.standard.expression.Expression.execute(Expression.java:109)
-	at org.thymeleaf.standard.expression.Expression.execute(Expression.java:138)
-	at org.thymeleaf.standard.expression.LinkExpression.executeLinkExpression(LinkExpression.java:264)
-	at org.thymeleaf.standard.expression.SimpleExpression.executeSimple(SimpleExpression.java:85)
-	at org.thymeleaf.standard.expression.Expression.execute(Expression.java:109)
-	at org.thymeleaf.standard.expression.Expression.execute(Expression.java:138)
-	at org.thymeleaf.standard.processor.AbstractStandardExpressionAttributeTagProcessor.doProcess(AbstractStandardExpressionAttributeTagProcessor.java:144)
-	at org.thymeleaf.processor.element.AbstractAttributeTagProcessor.doProcess(AbstractAttributeTagProcessor.java:74)
-	at org.thymeleaf.processor.element.AbstractElementTagProcessor.process(AbstractElementTagProcessor.java:95)
-	at org.thymeleaf.util.ProcessorConfigurationUtils$ElementTagProcessorWrapper.process(ProcessorConfigurationUtils.java:633)
-	at org.thymeleaf.engine.ProcessorTemplateHandler.handleStandaloneElement(ProcessorTemplateHandler.java:918)
-	at org.thymeleaf.engine.TemplateHandlerAdapterMarkupHandler.handleStandaloneElementEnd(TemplateHandlerAdapterMarkupHandler.java:260)
-	at org.thymeleaf.templateparser.markup.InlinedOutputExpressionMarkupHandler$InlineMarkupAdapterPreProcessorHandler.handleStandaloneElementEnd(InlinedOutputExpressionMarkupHandler.java:256)
-	at org.thymeleaf.standard.inline.OutputExpressionInlinePreProcessorHandler.handleStandaloneElementEnd(OutputExpressionInlinePreProcessorHandler.java:169)
-	at org.thymeleaf.templateparser.markup.InlinedOutputExpressionMarkupHandler.handleStandaloneElementEnd(InlinedOutputExpressionMarkupHandler.java:104)
-	at org.attoparser.HtmlVoidElement.handleOpenElementEnd(HtmlVoidElement.java:92)
-	at org.attoparser.HtmlMarkupHandler.handleOpenElementEnd(HtmlMarkupHandler.java:297)
-	at org.attoparser.MarkupEventProcessorHandler.handleOpenElementEnd(MarkupEventProcessorHandler.java:402)
-	at org.attoparser.ParsingElementMarkupUtil.parseOpenElement(ParsingElementMarkupUtil.java:159)
-	at org.attoparser.MarkupParser.parseBuffer(MarkupParser.java:710)
-	at org.attoparser.MarkupParser.parseDocument(MarkupParser.java:301)
-	... 50 common frames omitted
-Caused by: org.springframework.expression.spel.SpelEvaluationException: EL1007E: Property or field 'avatar' cannot be found on null
-	at org.springframework.expression.spel.ast.PropertyOrFieldReference.readProperty(PropertyOrFieldReference.java:213)
-	at org.springframework.expression.spel.ast.PropertyOrFieldReference.getValueInternal(PropertyOrFieldReference.java:104)
-	at org.springframework.expression.spel.ast.PropertyOrFieldReference.access$000(PropertyOrFieldReference.java:51)
-	at org.springframework.expression.spel.ast.PropertyOrFieldReference$AccessorLValue.getValue(PropertyOrFieldReference.java:406)
-	at org.springframework.expression.spel.ast.CompoundExpression.getValueInternal(CompoundExpression.java:92)
-	at org.springframework.expression.spel.ast.SpelNodeImpl.getValue(SpelNodeImpl.java:112)
-	at org.springframework.expression.spel.standard.SpelExpression.getValue(SpelExpression.java:337)
-	at org.thymeleaf.spring5.expression.SPELVariableExpressionEvaluator.evaluate(SPELVariableExpressionEvaluator.java:263)
-	... 73 common frames omitted
-
-2021-01-19 09:46:27.705 ERROR 1584 --- [http-nio-8080-exec-4] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.thymeleaf.exceptions.TemplateInputException: An error happened during template parsing (template: "class path resource [templates/admin/blogs.html]")] with root cause
-
-org.springframework.expression.spel.SpelEvaluationException: EL1007E: Property or field 'avatar' cannot be found on null
-	at org.springframework.expression.spel.ast.PropertyOrFieldReference.readProperty(PropertyOrFieldReference.java:213)
-	at org.springframework.expression.spel.ast.PropertyOrFieldReference.getValueInternal(PropertyOrFieldReference.java:104)
-	at org.springframework.expression.spel.ast.PropertyOrFieldReference.access$000(PropertyOrFieldReference.java:51)
-	at org.springframework.expression.spel.ast.PropertyOrFieldReference$AccessorLValue.getValue(PropertyOrFieldReference.java:406)
-	at org.springframework.expression.spel.ast.CompoundExpression.getValueInternal(CompoundExpression.java:92)
-	at org.springframework.expression.spel.ast.SpelNodeImpl.getValue(SpelNodeImpl.java:112)
-	at org.springframework.expression.spel.standard.SpelExpression.getValue(SpelExpression.java:337)
-	at org.thymeleaf.spring5.expression.SPELVariableExpressionEvaluator.evaluate(SPELVariableExpressionEvaluator.java:263)
-	at org.thymeleaf.standard.expression.VariableExpression.executeVariableExpression(VariableExpression.java:166)
-	at org.thymeleaf.standard.expression.SimpleExpression.executeSimple(SimpleExpression.java:66)
-	at org.thymeleaf.standard.expression.Expression.execute(Expression.java:109)
-	at org.thymeleaf.standard.expression.Expression.execute(Expression.java:138)
-	at org.thymeleaf.standard.expression.LinkExpression.executeLinkExpression(LinkExpression.java:264)
-	at org.thymeleaf.standard.expression.SimpleExpression.executeSimple(SimpleExpression.java:85)
-	at org.thymeleaf.standard.expression.Expression.execute(Expression.java:109)
-	at org.thymeleaf.standard.expression.Expression.execute(Expression.java:138)
-	at org.thymeleaf.standard.processor.AbstractStandardExpressionAttributeTagProcessor.doProcess(AbstractStandardExpressionAttributeTagProcessor.java:144)
-	at org.thymeleaf.processor.element.AbstractAttributeTagProcessor.doProcess(AbstractAttributeTagProcessor.java:74)
-	at org.thymeleaf.processor.element.AbstractElementTagProcessor.process(AbstractElementTagProcessor.java:95)
-	at org.thymeleaf.util.ProcessorConfigurationUtils$ElementTagProcessorWrapper.process(ProcessorConfigurationUtils.java:633)
-	at org.thymeleaf.engine.ProcessorTemplateHandler.handleStandaloneElement(ProcessorTemplateHandler.java:918)
-	at org.thymeleaf.engine.TemplateHandlerAdapterMarkupHandler.handleStandaloneElementEnd(TemplateHandlerAdapterMarkupHandler.java:260)
-	at org.thymeleaf.templateparser.markup.InlinedOutputExpressionMarkupHandler$InlineMarkupAdapterPreProcessorHandler.handleStandaloneElementEnd(InlinedOutputExpressionMarkupHandler.java:256)
-	at org.thymeleaf.standard.inline.OutputExpressionInlinePreProcessorHandler.handleStandaloneElementEnd(OutputExpressionInlinePreProcessorHandler.java:169)
-	at org.thymeleaf.templateparser.markup.InlinedOutputExpressionMarkupHandler.handleStandaloneElementEnd(InlinedOutputExpressionMarkupHandler.java:104)
-	at org.attoparser.HtmlVoidElement.handleOpenElementEnd(HtmlVoidElement.java:92)
-	at org.attoparser.HtmlMarkupHandler.handleOpenElementEnd(HtmlMarkupHandler.java:297)
-	at org.attoparser.MarkupEventProcessorHandler.handleOpenElementEnd(MarkupEventProcessorHandler.java:402)
-	at org.attoparser.ParsingElementMarkupUtil.parseOpenElement(ParsingElementMarkupUtil.java:159)
-	at org.attoparser.MarkupParser.parseBuffer(MarkupParser.java:710)
-	at org.attoparser.MarkupParser.parseDocument(MarkupParser.java:301)
-	at org.attoparser.MarkupParser.parse(MarkupParser.java:257)
-	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parse(AbstractMarkupTemplateParser.java:230)
-	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parseStandalone(AbstractMarkupTemplateParser.java:100)
-	at org.thymeleaf.engine.TemplateManager.parseAndProcess(TemplateManager.java:666)
-	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1098)
-	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1072)
-	at org.thymeleaf.spring5.view.ThymeleafView.renderFragment(ThymeleafView.java:362)
-	at org.thymeleaf.spring5.view.ThymeleafView.render(ThymeleafView.java:189)
-	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1373)
-	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1118)
-	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1057)
-	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943)
-	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
-	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:634)
-	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
-	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
-	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
-	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
-	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
-	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
-	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
-	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
-	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
-	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
-	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
-	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
-	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:367)
-	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
-	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868)
-	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1639)
-	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
-	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
-	at java.lang.Thread.run(Thread.java:748)
-
-2021-01-19 09:50:21.067  INFO 1584 --- [Thread-9] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
-2021-01-19 09:50:21.067  INFO 1584 --- [Thread-9] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2021-01-19 09:50:21.130  INFO 1584 --- [Thread-9] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2021-01-19 09:50:21.441  INFO 1584 --- [restartedMain] com.fly.myblog.MyblogApplication         : Starting MyblogApplication on DESKTOP-HML8KQ7 with PID 1584 (started by 集联科技 in D:\搜狗高速下载\github_projects\myblog)
-2021-01-19 09:50:21.441 DEBUG 1584 --- [restartedMain] com.fly.myblog.MyblogApplication         : Running with Spring Boot v2.2.5.RELEASE, Spring v5.2.4.RELEASE
-2021-01-19 09:50:21.441  INFO 1584 --- [restartedMain] com.fly.myblog.MyblogApplication         : The following profiles are active: dev
-2021-01-19 09:50:21.631  INFO 1584 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-2021-01-19 09:50:21.631  INFO 1584 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2021-01-19 09:50:21.631  INFO 1584 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.31]
-2021-01-19 09:50:21.647  INFO 1584 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2021-01-19 09:50:21.647  INFO 1584 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 206 ms
-2021-01-19 09:50:21.836  INFO 1584 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
-2021-01-19 09:50:21.851  INFO 1584 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
-2021-01-19 09:50:22.010  INFO 1584 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2021-01-19 09:50:22.023  INFO 1584 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
-2021-01-19 09:50:22.023  INFO 1584 --- [restartedMain] com.fly.myblog.MyblogApplication         : Started MyblogApplication in 0.602 seconds (JVM running for 281.139)
-2021-01-19 09:50:22.023  INFO 1584 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
-2021-01-19 09:52:04.329  INFO 2340 --- [restartedMain] com.fly.myblog.MyblogApplication         : Starting MyblogApplication on DESKTOP-HML8KQ7 with PID 2340 (started by 集联科技 in D:\搜狗高速下载\github_projects\myblog)
-2021-01-19 09:52:04.331 DEBUG 2340 --- [restartedMain] com.fly.myblog.MyblogApplication         : Running with Spring Boot v2.2.5.RELEASE, Spring v5.2.4.RELEASE
-2021-01-19 09:52:04.332  INFO 2340 --- [restartedMain] com.fly.myblog.MyblogApplication         : The following profiles are active: dev
-2021-01-19 09:52:04.363  INFO 2340 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2021-01-19 09:52:04.363  INFO 2340 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2021-01-19 09:52:05.130  INFO 2340 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-2021-01-19 09:52:05.145  INFO 2340 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2021-01-19 09:52:05.145  INFO 2340 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.31]
-2021-01-19 09:52:05.192  INFO 2340 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2021-01-19 09:52:05.192  INFO 2340 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 829 ms
-2021-01-19 09:52:05.623  INFO 2340 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
-2021-01-19 09:52:05.669  INFO 2340 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
-2021-01-19 09:52:05.875  INFO 2340 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2021-01-19 09:52:05.903  INFO 2340 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
-2021-01-19 09:52:05.919  INFO 2340 --- [restartedMain] com.fly.myblog.MyblogApplication         : Started MyblogApplication in 2.106 seconds (JVM running for 2.859)
-2021-01-19 09:52:12.638  INFO 2340 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2021-01-19 09:52:12.638  INFO 2340 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2021-01-19 09:52:12.645  INFO 2340 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 7 ms
-2021-01-19 09:53:07.511  INFO 2340 --- [http-nio-8080-exec-4] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2021-01-19 09:53:07.639  INFO 2340 --- [http-nio-8080-exec-4] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2021-01-19 09:53:07.654 DEBUG 2340 --- [http-nio-8080-exec-4] c.f.m.d.U.findByUsernameAndPassword      : ==>  Preparing: select * from myblog.t_user where username = ? and password = ?
-2021-01-19 09:53:07.679 DEBUG 2340 --- [http-nio-8080-exec-4] c.f.m.d.U.findByUsernameAndPassword      : ==> Parameters: admin(String), e10adc3949ba59abbe56e057f20f883e(String)
-2021-01-19 09:53:07.708 DEBUG 2340 --- [http-nio-8080-exec-4] c.f.m.d.U.findByUsernameAndPassword      : <==      Total: 1
-2021-01-19 09:53:07.807  INFO 2340 --- [http-nio-8080-exec-3] com.fly.myblog.Aspect.LogAspect          : Request: RequestLog{url='http://localhost:8080/footer/blogmessage', ip='0:0:0:0:0:0:0:1', classMethod='com.fly.myblog.controller.IndexController.blogMessage', args=[{}]}
-2021-01-19 09:53:07.825 DEBUG 2340 --- [http-nio-8080-exec-3] com.fly.myblog.dao.BlogDao.getBlogTotal  : ==>  Preparing: select count(*) from myblog.t_blog
-2021-01-19 09:53:07.826 DEBUG 2340 --- [http-nio-8080-exec-3] com.fly.myblog.dao.BlogDao.getBlogTotal  : ==> Parameters: 
-2021-01-19 09:53:07.828 DEBUG 2340 --- [http-nio-8080-exec-3] com.fly.myblog.dao.BlogDao.getBlogTotal  : <==      Total: 1
-2021-01-19 09:53:07.832 DEBUG 2340 --- [http-nio-8080-exec-3] c.f.myblog.dao.BlogDao.getBlogViewTotal  : ==>  Preparing: select coalesce (sum(views),0) from myblog.t_blog
-2021-01-19 09:53:07.833 DEBUG 2340 --- [http-nio-8080-exec-3] c.f.myblog.dao.BlogDao.getBlogViewTotal  : ==> Parameters: 
-2021-01-19 09:53:07.833 DEBUG 2340 --- [http-nio-8080-exec-3] c.f.myblog.dao.BlogDao.getBlogViewTotal  : <==      Total: 1
-2021-01-19 09:53:07.835 DEBUG 2340 --- [http-nio-8080-exec-3] c.f.m.dao.BlogDao.getBlogCommentTotal    : ==>  Preparing: select count(*) from myblog.t_comment
-2021-01-19 09:53:07.835 DEBUG 2340 --- [http-nio-8080-exec-3] c.f.m.dao.BlogDao.getBlogCommentTotal    : ==> Parameters: 
-2021-01-19 09:53:07.836 DEBUG 2340 --- [http-nio-8080-exec-3] c.f.m.dao.BlogDao.getBlogCommentTotal    : <==      Total: 1
-2021-01-19 09:53:07.840 DEBUG 2340 --- [http-nio-8080-exec-3] c.f.m.dao.BlogDao.getBlogMessageTotal    : ==>  Preparing: select count(*) from myblog.t_message
-2021-01-19 09:53:07.840 DEBUG 2340 --- [http-nio-8080-exec-3] c.f.m.dao.BlogDao.getBlogMessageTotal    : ==> Parameters: 
-2021-01-19 09:53:07.842 DEBUG 2340 --- [http-nio-8080-exec-3] c.f.m.dao.BlogDao.getBlogMessageTotal    : <==      Total: 1
-2021-01-19 09:53:07.844  INFO 2340 --- [http-nio-8080-exec-3] com.fly.myblog.Aspect.LogAspect          : ------doAfter-------
-2021-01-19 09:53:07.844  INFO 2340 --- [http-nio-8080-exec-3] com.fly.myblog.Aspect.LogAspect          : Result : index :: blogMessage
-2021-01-19 09:53:08.974 DEBUG 2340 --- [http-nio-8080-exec-2] c.f.myblog.dao.BlogDao.getAllBlog_COUNT  : ==>  Preparing: SELECT count(0) FROM myblog.t_blog b LEFT JOIN myblog.t_type t ON b.type_id = t.id
-2021-01-19 09:53:08.975 DEBUG 2340 --- [http-nio-8080-exec-2] c.f.myblog.dao.BlogDao.getAllBlog_COUNT  : ==> Parameters: 
-2021-01-19 09:53:08.976 DEBUG 2340 --- [http-nio-8080-exec-2] c.f.myblog.dao.BlogDao.getAllBlog_COUNT  : <==      Total: 1
-2021-01-19 09:53:08.983 DEBUG 2340 --- [http-nio-8080-exec-2] com.fly.myblog.dao.BlogDao.getAllBlog    : ==>  Preparing: SELECT b.id, b.title, b.update_time, b.recommend, b.published, b.type_id, t.id, t.name FROM myblog.t_blog b LEFT JOIN myblog.t_type t ON b.type_id = t.id order by update_time desc LIMIT ?
-2021-01-19 09:53:08.984 DEBUG 2340 --- [http-nio-8080-exec-2] com.fly.myblog.dao.BlogDao.getAllBlog    : ==> Parameters: 10(Integer)
-2021-01-19 09:53:08.991 DEBUG 2340 --- [http-nio-8080-exec-2] com.fly.myblog.dao.BlogDao.getAllBlog    : <==      Total: 4
-2021-01-19 09:53:09.001 DEBUG 2340 --- [http-nio-8080-exec-2] com.fly.myblog.dao.TypeDao.getAllType    : ==>  Preparing: select * from myblog.t_type
-2021-01-19 09:53:09.002 DEBUG 2340 --- [http-nio-8080-exec-2] com.fly.myblog.dao.TypeDao.getAllType    : ==> Parameters: 
-2021-01-19 09:53:09.003 DEBUG 2340 --- [http-nio-8080-exec-2] com.fly.myblog.dao.TypeDao.getAllType    : <==      Total: 2
-2021-01-19 09:53:09.074  INFO 2340 --- [http-nio-8080-exec-10] com.fly.myblog.Aspect.LogAspect          : Request: RequestLog{url='http://localhost:8080/footer/blogmessage', ip='0:0:0:0:0:0:0:1', classMethod='com.fly.myblog.controller.IndexController.blogMessage', args=[{}]}
-2021-01-19 09:53:09.077 DEBUG 2340 --- [http-nio-8080-exec-10] com.fly.myblog.dao.BlogDao.getBlogTotal  : ==>  Preparing: select count(*) from myblog.t_blog
-2021-01-19 09:53:09.077 DEBUG 2340 --- [http-nio-8080-exec-10] com.fly.myblog.dao.BlogDao.getBlogTotal  : ==> Parameters: 
-2021-01-19 09:53:09.079 DEBUG 2340 --- [http-nio-8080-exec-10] com.fly.myblog.dao.BlogDao.getBlogTotal  : <==      Total: 1
-2021-01-19 09:53:09.081 DEBUG 2340 --- [http-nio-8080-exec-10] c.f.myblog.dao.BlogDao.getBlogViewTotal  : ==>  Preparing: select coalesce (sum(views),0) from myblog.t_blog
-2021-01-19 09:53:09.081 DEBUG 2340 --- [http-nio-8080-exec-10] c.f.myblog.dao.BlogDao.getBlogViewTotal  : ==> Parameters: 
-2021-01-19 09:53:09.082 DEBUG 2340 --- [http-nio-8080-exec-10] c.f.myblog.dao.BlogDao.getBlogViewTotal  : <==      Total: 1
-2021-01-19 09:53:09.083 DEBUG 2340 --- [http-nio-8080-exec-10] c.f.m.dao.BlogDao.getBlogCommentTotal    : ==>  Preparing: select count(*) from myblog.t_comment
-2021-01-19 09:53:09.083 DEBUG 2340 --- [http-nio-8080-exec-10] c.f.m.dao.BlogDao.getBlogCommentTotal    : ==> Parameters: 
-2021-01-19 09:53:09.084 DEBUG 2340 --- [http-nio-8080-exec-10] c.f.m.dao.BlogDao.getBlogCommentTotal    : <==      Total: 1
-2021-01-19 09:53:09.085 DEBUG 2340 --- [http-nio-8080-exec-10] c.f.m.dao.BlogDao.getBlogMessageTotal    : ==>  Preparing: select count(*) from myblog.t_message
-2021-01-19 09:53:09.086 DEBUG 2340 --- [http-nio-8080-exec-10] c.f.m.dao.BlogDao.getBlogMessageTotal    : ==> Parameters: 
-2021-01-19 09:53:09.087 DEBUG 2340 --- [http-nio-8080-exec-10] c.f.m.dao.BlogDao.getBlogMessageTotal    : <==      Total: 1
-2021-01-19 09:53:09.089  INFO 2340 --- [http-nio-8080-exec-10] com.fly.myblog.Aspect.LogAspect          : ------doAfter-------
-2021-01-19 09:53:09.089  INFO 2340 --- [http-nio-8080-exec-10] com.fly.myblog.Aspect.LogAspect          : Result : index :: blogMessage
-2021-01-19 10:04:12.738 DEBUG 2340 --- [http-nio-8080-exec-4] com.fly.myblog.dao.TypeDao.getAllType    : ==>  Preparing: select * from myblog.t_type
-2021-01-19 10:04:12.738 DEBUG 2340 --- [http-nio-8080-exec-4] com.fly.myblog.dao.TypeDao.getAllType    : ==> Parameters: 
-2021-01-19 10:04:12.740 DEBUG 2340 --- [http-nio-8080-exec-4] com.fly.myblog.dao.TypeDao.getAllType    : <==      Total: 2
-2021-01-19 10:04:12.894  INFO 2340 --- [http-nio-8080-exec-2] com.fly.myblog.Aspect.LogAspect          : Request: RequestLog{url='http://localhost:8080/footer/blogmessage', ip='0:0:0:0:0:0:0:1', classMethod='com.fly.myblog.controller.IndexController.blogMessage', args=[{}]}
-2021-01-19 10:04:12.895 DEBUG 2340 --- [http-nio-8080-exec-2] com.fly.myblog.dao.BlogDao.getBlogTotal  : ==>  Preparing: select count(*) from myblog.t_blog
-2021-01-19 10:04:12.895 DEBUG 2340 --- [http-nio-8080-exec-2] com.fly.myblog.dao.BlogDao.getBlogTotal  : ==> Parameters: 
-2021-01-19 10:04:12.897 DEBUG 2340 --- [http-nio-8080-exec-2] com.fly.myblog.dao.BlogDao.getBlogTotal  : <==      Total: 1
-2021-01-19 10:04:12.898 DEBUG 2340 --- [http-nio-8080-exec-2] c.f.myblog.dao.BlogDao.getBlogViewTotal  : ==>  Preparing: select coalesce (sum(views),0) from myblog.t_blog
-2021-01-19 10:04:12.899 DEBUG 2340 --- [http-nio-8080-exec-2] c.f.myblog.dao.BlogDao.getBlogViewTotal  : ==> Parameters: 
-2021-01-19 10:04:12.899 DEBUG 2340 --- [http-nio-8080-exec-2] c.f.myblog.dao.BlogDao.getBlogViewTotal  : <==      Total: 1
-2021-01-19 10:04:12.903 DEBUG 2340 --- [http-nio-8080-exec-2] c.f.m.dao.BlogDao.getBlogCommentTotal    : ==>  Preparing: select count(*) from myblog.t_comment
-2021-01-19 10:04:12.904 DEBUG 2340 --- [http-nio-8080-exec-2] c.f.m.dao.BlogDao.getBlogCommentTotal    : ==> Parameters: 
-2021-01-19 10:04:12.906 DEBUG 2340 --- [http-nio-8080-exec-2] c.f.m.dao.BlogDao.getBlogCommentTotal    : <==      Total: 1
-2021-01-19 10:04:12.909 DEBUG 2340 --- [http-nio-8080-exec-2] c.f.m.dao.BlogDao.getBlogMessageTotal    : ==>  Preparing: select count(*) from myblog.t_message
-2021-01-19 10:04:12.909 DEBUG 2340 --- [http-nio-8080-exec-2] c.f.m.dao.BlogDao.getBlogMessageTotal    : ==> Parameters: 
-2021-01-19 10:04:12.915 DEBUG 2340 --- [http-nio-8080-exec-2] c.f.m.dao.BlogDao.getBlogMessageTotal    : <==      Total: 1
-2021-01-19 10:04:12.917  INFO 2340 --- [http-nio-8080-exec-2] com.fly.myblog.Aspect.LogAspect          : ------doAfter-------
-2021-01-19 10:04:12.917  INFO 2340 --- [http-nio-8080-exec-2] com.fly.myblog.Aspect.LogAspect          : Result : index :: blogMessage
-2021-01-19 10:12:24.935  INFO 2960 --- [main] com.fly.myblog.MyblogApplicationTests    : Starting MyblogApplicationTests on DESKTOP-HML8KQ7 with PID 2960 (started by �����Ƽ� in D:\�ѹ���������\github_projects\myblog)
-2021-01-19 10:12:24.940 DEBUG 2960 --- [main] com.fly.myblog.MyblogApplicationTests    : Running with Spring Boot v2.2.5.RELEASE, Spring v5.2.4.RELEASE
-2021-01-19 10:12:24.940  INFO 2960 --- [main] com.fly.myblog.MyblogApplicationTests    : The following profiles are active: dev
-2021-01-19 10:12:27.847  INFO 2960 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
-2021-01-19 10:12:28.035  INFO 2960 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
-2021-01-19 10:12:28.618  INFO 2960 --- [main] com.fly.myblog.MyblogApplicationTests    : Started MyblogApplicationTests in 4.268 seconds (JVM running for 5.911)
-2021-01-19 10:12:29.310  INFO 2960 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
-2021-01-19 14:56:17.693  INFO 5608 --- [restartedMain] com.fly.myblog.MyblogApplication         : Starting MyblogApplication on DESKTOP-HML8KQ7 with PID 5608 (started by 集联科技 in D:\搜狗高速下载\github_projects\myblog)
-2021-01-19 14:56:17.694 DEBUG 5608 --- [restartedMain] com.fly.myblog.MyblogApplication         : Running with Spring Boot v2.2.5.RELEASE, Spring v5.2.4.RELEASE
-2021-01-19 14:56:17.695  INFO 5608 --- [restartedMain] com.fly.myblog.MyblogApplication         : The following profiles are active: dev
-2021-01-19 14:56:17.723  INFO 5608 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2021-01-19 14:56:17.723  INFO 5608 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2021-01-19 14:56:18.628  INFO 5608 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-2021-01-19 14:56:18.633  INFO 5608 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2021-01-19 14:56:18.633  INFO 5608 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.31]
-2021-01-19 14:56:18.682  INFO 5608 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2021-01-19 14:56:18.682  INFO 5608 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 959 ms
-2021-01-19 14:56:19.134  INFO 5608 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
-2021-01-19 14:56:19.192  INFO 5608 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
-2021-01-19 14:56:19.414  INFO 5608 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2021-01-19 14:56:19.440  INFO 5608 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
-2021-01-19 14:56:19.442  INFO 5608 --- [restartedMain] com.fly.myblog.MyblogApplication         : Started MyblogApplication in 2.153 seconds (JVM running for 2.948)
-2021-01-19 14:56:58.404  INFO 5608 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2021-01-19 14:56:58.405  INFO 5608 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2021-01-19 14:56:58.412  INFO 5608 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 7 ms
-2021-01-19 14:56:58.435  INFO 5608 --- [http-nio-8080-exec-1] com.fly.myblog.Aspect.LogAspect          : Request: RequestLog{url='http://localhost:8080/', ip='0:0:0:0:0:0:0:1', classMethod='com.fly.myblog.controller.IndexController.index', args=[{}, 1, {}]}
-2021-01-19 14:56:58.442  INFO 5608 --- [http-nio-8080-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2021-01-19 14:56:58.511  INFO 5608 --- [http-nio-8080-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2021-01-19 14:56:58.551 DEBUG 5608 --- [http-nio-8080-exec-1] c.f.m.d.BlogDao.getFirstPageBlog_COUNT   : ==>  Preparing: SELECT count(0) FROM myblog.t_blog b, myblog.t_type t, myblog.t_user u WHERE b.type_id = t.id AND u.id = b.user_id
-2021-01-19 14:56:58.563 DEBUG 5608 --- [http-nio-8080-exec-1] c.f.m.d.BlogDao.getFirstPageBlog_COUNT   : ==> Parameters: 
-2021-01-19 14:56:58.575 DEBUG 5608 --- [http-nio-8080-exec-1] c.f.m.d.BlogDao.getFirstPageBlog_COUNT   : <==      Total: 1
-2021-01-19 14:56:58.576 DEBUG 5608 --- [http-nio-8080-exec-1] c.f.myblog.dao.BlogDao.getFirstPageBlog  : ==>  Preparing: select b.id,b.title,b.first_picture,b.views,b.comment_count,b.update_time,b.description, t.name, u.nickname,u.avatar from myblog.t_blog b,myblog.t_type t,myblog.t_user u where b.type_id = t.id and u.id = b.user_id order by b.update_time desc LIMIT ?
-2021-01-19 14:56:58.576 DEBUG 5608 --- [http-nio-8080-exec-1] c.f.myblog.dao.BlogDao.getFirstPageBlog  : ==> Parameters: 10(Integer)
-2021-01-19 14:56:58.579 DEBUG 5608 --- [http-nio-8080-exec-1] c.f.myblog.dao.BlogDao.getFirstPageBlog  : <==      Total: 4
-2021-01-19 14:56:58.581 DEBUG 5608 --- [http-nio-8080-exec-1] c.f.m.dao.BlogDao.getRecommendedBlog     : ==>  Preparing: select * from myblog.t_blog where t_blog.recommend = true order by t_blog.update_time desc limit 4
-2021-01-19 14:56:58.581 DEBUG 5608 --- [http-nio-8080-exec-1] c.f.m.dao.BlogDao.getRecommendedBlog     : ==> Parameters: 
-2021-01-19 14:56:58.583 DEBUG 5608 --- [http-nio-8080-exec-1] c.f.m.dao.BlogDao.getRecommendedBlog     : <==      Total: 4
-2021-01-19 14:56:58.585  INFO 5608 --- [http-nio-8080-exec-1] com.fly.myblog.Aspect.LogAspect          : ------doAfter-------
-2021-01-19 14:56:58.585  INFO 5608 --- [http-nio-8080-exec-1] com.fly.myblog.Aspect.LogAspect          : Result : index
-2021-01-19 14:56:58.942  INFO 5608 --- [http-nio-8080-exec-1] com.fly.myblog.Aspect.LogAspect          : Request: RequestLog{url='http://localhost:8080/footer/blogmessage', ip='0:0:0:0:0:0:0:1', classMethod='com.fly.myblog.controller.IndexController.blogMessage', args=[{}]}
-2021-01-19 14:56:58.943 DEBUG 5608 --- [http-nio-8080-exec-1] com.fly.myblog.dao.BlogDao.getBlogTotal  : ==>  Preparing: select count(*) from myblog.t_blog
-2021-01-19 14:56:58.943 DEBUG 5608 --- [http-nio-8080-exec-1] com.fly.myblog.dao.BlogDao.getBlogTotal  : ==> Parameters: 
-2021-01-19 14:56:58.945 DEBUG 5608 --- [http-nio-8080-exec-1] com.fly.myblog.dao.BlogDao.getBlogTotal  : <==      Total: 1
-2021-01-19 14:56:58.947 DEBUG 5608 --- [http-nio-8080-exec-1] c.f.myblog.dao.BlogDao.getBlogViewTotal  : ==>  Preparing: select coalesce (sum(views),0) from myblog.t_blog
-2021-01-19 14:56:58.947 DEBUG 5608 --- [http-nio-8080-exec-1] c.f.myblog.dao.BlogDao.getBlogViewTotal  : ==> Parameters: 
-2021-01-19 14:56:58.948 DEBUG 5608 --- [http-nio-8080-exec-1] c.f.myblog.dao.BlogDao.getBlogViewTotal  : <==      Total: 1
-2021-01-19 14:56:58.950 DEBUG 5608 --- [http-nio-8080-exec-1] c.f.m.dao.BlogDao.getBlogCommentTotal    : ==>  Preparing: select count(*) from myblog.t_comment
-2021-01-19 14:56:58.950 DEBUG 5608 --- [http-nio-8080-exec-1] c.f.m.dao.BlogDao.getBlogCommentTotal    : ==> Parameters: 
-2021-01-19 14:56:58.951 DEBUG 5608 --- [http-nio-8080-exec-1] c.f.m.dao.BlogDao.getBlogCommentTotal    : <==      Total: 1
-2021-01-19 14:56:58.952 DEBUG 5608 --- [http-nio-8080-exec-1] c.f.m.dao.BlogDao.getBlogMessageTotal    : ==>  Preparing: select count(*) from myblog.t_message
-2021-01-19 14:56:58.953 DEBUG 5608 --- [http-nio-8080-exec-1] c.f.m.dao.BlogDao.getBlogMessageTotal    : ==> Parameters: 
-2021-01-19 14:56:58.954 DEBUG 5608 --- [http-nio-8080-exec-1] c.f.m.dao.BlogDao.getBlogMessageTotal    : <==      Total: 1
-2021-01-19 14:56:58.955  INFO 5608 --- [http-nio-8080-exec-1] com.fly.myblog.Aspect.LogAspect          : ------doAfter-------
-2021-01-19 14:56:58.955  INFO 5608 --- [http-nio-8080-exec-1] com.fly.myblog.Aspect.LogAspect          : Result : index :: blogMessage
-2021-01-19 14:58:11.677 DEBUG 5608 --- [http-nio-8080-exec-5] c.f.m.d.U.findByUsernameAndPassword      : ==>  Preparing: select * from myblog.t_user where username = ? and password = ?
-2021-01-19 14:58:11.678 DEBUG 5608 --- [http-nio-8080-exec-5] c.f.m.d.U.findByUsernameAndPassword      : ==> Parameters: admin(String), e10adc3949ba59abbe56e057f20f883e(String)
-2021-01-19 14:58:11.679 DEBUG 5608 --- [http-nio-8080-exec-5] c.f.m.d.U.findByUsernameAndPassword      : <==      Total: 1
-2021-01-19 14:58:11.720  INFO 5608 --- [http-nio-8080-exec-7] com.fly.myblog.Aspect.LogAspect          : Request: RequestLog{url='http://localhost:8080/footer/blogmessage', ip='0:0:0:0:0:0:0:1', classMethod='com.fly.myblog.controller.IndexController.blogMessage', args=[{}]}
-2021-01-19 14:58:11.721 DEBUG 5608 --- [http-nio-8080-exec-7] com.fly.myblog.dao.BlogDao.getBlogTotal  : ==>  Preparing: select count(*) from myblog.t_blog
-2021-01-19 14:58:11.721 DEBUG 5608 --- [http-nio-8080-exec-7] com.fly.myblog.dao.BlogDao.getBlogTotal  : ==> Parameters: 
-2021-01-19 14:58:11.722 DEBUG 5608 --- [http-nio-8080-exec-7] com.fly.myblog.dao.BlogDao.getBlogTotal  : <==      Total: 1
-2021-01-19 14:58:11.723 DEBUG 5608 --- [http-nio-8080-exec-7] c.f.myblog.dao.BlogDao.getBlogViewTotal  : ==>  Preparing: select coalesce (sum(views),0) from myblog.t_blog
-2021-01-19 14:58:11.724 DEBUG 5608 --- [http-nio-8080-exec-7] c.f.myblog.dao.BlogDao.getBlogViewTotal  : ==> Parameters: 
-2021-01-19 14:58:11.724 DEBUG 5608 --- [http-nio-8080-exec-7] c.f.myblog.dao.BlogDao.getBlogViewTotal  : <==      Total: 1
-2021-01-19 14:58:11.726 DEBUG 5608 --- [http-nio-8080-exec-7] c.f.m.dao.BlogDao.getBlogCommentTotal    : ==>  Preparing: select count(*) from myblog.t_comment
-2021-01-19 14:58:11.726 DEBUG 5608 --- [http-nio-8080-exec-7] c.f.m.dao.BlogDao.getBlogCommentTotal    : ==> Parameters: 
-2021-01-19 14:58:11.727 DEBUG 5608 --- [http-nio-8080-exec-7] c.f.m.dao.BlogDao.getBlogCommentTotal    : <==      Total: 1
-2021-01-19 14:58:11.729 DEBUG 5608 --- [http-nio-8080-exec-7] c.f.m.dao.BlogDao.getBlogMessageTotal    : ==>  Preparing: select count(*) from myblog.t_message
-2021-01-19 14:58:11.729 DEBUG 5608 --- [http-nio-8080-exec-7] c.f.m.dao.BlogDao.getBlogMessageTotal    : ==> Parameters: 
-2021-01-19 14:58:11.731 DEBUG 5608 --- [http-nio-8080-exec-7] c.f.m.dao.BlogDao.getBlogMessageTotal    : <==      Total: 1
-2021-01-19 14:58:11.731  INFO 5608 --- [http-nio-8080-exec-7] com.fly.myblog.Aspect.LogAspect          : ------doAfter-------
-2021-01-19 14:58:11.731  INFO 5608 --- [http-nio-8080-exec-7] com.fly.myblog.Aspect.LogAspect          : Result : index :: blogMessage
-2021-01-19 14:58:13.299 DEBUG 5608 --- [http-nio-8080-exec-8] c.f.myblog.dao.BlogDao.getAllBlog_COUNT  : ==>  Preparing: SELECT count(0) FROM myblog.t_blog b LEFT JOIN myblog.t_type t ON b.type_id = t.id
-2021-01-19 14:58:13.299 DEBUG 5608 --- [http-nio-8080-exec-8] c.f.myblog.dao.BlogDao.getAllBlog_COUNT  : ==> Parameters: 
-2021-01-19 14:58:13.300 DEBUG 5608 --- [http-nio-8080-exec-8] c.f.myblog.dao.BlogDao.getAllBlog_COUNT  : <==      Total: 1
-2021-01-19 14:58:13.303 DEBUG 5608 --- [http-nio-8080-exec-8] com.fly.myblog.dao.BlogDao.getAllBlog    : ==>  Preparing: SELECT b.id, b.title, b.update_time, b.recommend, b.published, b.type_id, t.id, t.name FROM myblog.t_blog b LEFT JOIN myblog.t_type t ON b.type_id = t.id order by update_time desc LIMIT ?
-2021-01-19 14:58:13.303 DEBUG 5608 --- [http-nio-8080-exec-8] com.fly.myblog.dao.BlogDao.getAllBlog    : ==> Parameters: 10(Integer)
-2021-01-19 14:58:13.304 DEBUG 5608 --- [http-nio-8080-exec-8] com.fly.myblog.dao.BlogDao.getAllBlog    : <==      Total: 4
-2021-01-19 14:58:13.308 DEBUG 5608 --- [http-nio-8080-exec-8] com.fly.myblog.dao.TypeDao.getAllType    : ==>  Preparing: select * from myblog.t_type
-2021-01-19 14:58:13.309 DEBUG 5608 --- [http-nio-8080-exec-8] com.fly.myblog.dao.TypeDao.getAllType    : ==> Parameters: 
-2021-01-19 14:58:13.309 DEBUG 5608 --- [http-nio-8080-exec-8] com.fly.myblog.dao.TypeDao.getAllType    : <==      Total: 2
-2021-01-19 14:58:13.357  INFO 5608 --- [http-nio-8080-exec-2] com.fly.myblog.Aspect.LogAspect          : Request: RequestLog{url='http://localhost:8080/footer/blogmessage', ip='0:0:0:0:0:0:0:1', classMethod='com.fly.myblog.controller.IndexController.blogMessage', args=[{}]}
-2021-01-19 14:58:13.358 DEBUG 5608 --- [http-nio-8080-exec-2] com.fly.myblog.dao.BlogDao.getBlogTotal  : ==>  Preparing: select count(*) from myblog.t_blog
-2021-01-19 14:58:13.359 DEBUG 5608 --- [http-nio-8080-exec-2] com.fly.myblog.dao.BlogDao.getBlogTotal  : ==> Parameters: 
-2021-01-19 14:58:13.361 DEBUG 5608 --- [http-nio-8080-exec-2] com.fly.myblog.dao.BlogDao.getBlogTotal  : <==      Total: 1
-2021-01-19 14:58:13.364 DEBUG 5608 --- [http-nio-8080-exec-2] c.f.myblog.dao.BlogDao.getBlogViewTotal  : ==>  Preparing: select coalesce (sum(views),0) from myblog.t_blog
-2021-01-19 14:58:13.365 DEBUG 5608 --- [http-nio-8080-exec-2] c.f.myblog.dao.BlogDao.getBlogViewTotal  : ==> Parameters: 
-2021-01-19 14:58:13.365 DEBUG 5608 --- [http-nio-8080-exec-2] c.f.myblog.dao.BlogDao.getBlogViewTotal  : <==      Total: 1
-2021-01-19 14:58:13.367 DEBUG 5608 --- [http-nio-8080-exec-2] c.f.m.dao.BlogDao.getBlogCommentTotal    : ==>  Preparing: select count(*) from myblog.t_comment
-2021-01-19 14:58:13.367 DEBUG 5608 --- [http-nio-8080-exec-2] c.f.m.dao.BlogDao.getBlogCommentTotal    : ==> Parameters: 
-2021-01-19 14:58:13.368 DEBUG 5608 --- [http-nio-8080-exec-2] c.f.m.dao.BlogDao.getBlogCommentTotal    : <==      Total: 1
-2021-01-19 14:58:13.370 DEBUG 5608 --- [http-nio-8080-exec-2] c.f.m.dao.BlogDao.getBlogMessageTotal    : ==>  Preparing: select count(*) from myblog.t_message
-2021-01-19 14:58:13.370 DEBUG 5608 --- [http-nio-8080-exec-2] c.f.m.dao.BlogDao.getBlogMessageTotal    : ==> Parameters: 
-2021-01-19 14:58:13.371 DEBUG 5608 --- [http-nio-8080-exec-2] c.f.m.dao.BlogDao.getBlogMessageTotal    : <==      Total: 1
-2021-01-19 14:58:13.372  INFO 5608 --- [http-nio-8080-exec-2] com.fly.myblog.Aspect.LogAspect          : ------doAfter-------
-2021-01-19 14:58:13.373  INFO 5608 --- [http-nio-8080-exec-2] com.fly.myblog.Aspect.LogAspect          : Result : index :: blogMessage
-2021-01-19 14:58:14.292 DEBUG 5608 --- [http-nio-8080-exec-7] com.fly.myblog.dao.TypeDao.getAllType    : ==>  Preparing: select * from myblog.t_type
-2021-01-19 14:58:14.292 DEBUG 5608 --- [http-nio-8080-exec-7] com.fly.myblog.dao.TypeDao.getAllType    : ==> Parameters: 
-2021-01-19 14:58:14.293 DEBUG 5608 --- [http-nio-8080-exec-7] com.fly.myblog.dao.TypeDao.getAllType    : <==      Total: 2
-2021-01-19 14:58:14.349  INFO 5608 --- [http-nio-8080-exec-6] com.fly.myblog.Aspect.LogAspect          : Request: RequestLog{url='http://localhost:8080/footer/blogmessage', ip='0:0:0:0:0:0:0:1', classMethod='com.fly.myblog.controller.IndexController.blogMessage', args=[{}]}
-2021-01-19 14:58:14.350 DEBUG 5608 --- [http-nio-8080-exec-6] com.fly.myblog.dao.BlogDao.getBlogTotal  : ==>  Preparing: select count(*) from myblog.t_blog
-2021-01-19 14:58:14.350 DEBUG 5608 --- [http-nio-8080-exec-6] com.fly.myblog.dao.BlogDao.getBlogTotal  : ==> Parameters: 
-2021-01-19 14:58:14.352 DEBUG 5608 --- [http-nio-8080-exec-6] com.fly.myblog.dao.BlogDao.getBlogTotal  : <==      Total: 1
-2021-01-19 14:58:14.354 DEBUG 5608 --- [http-nio-8080-exec-6] c.f.myblog.dao.BlogDao.getBlogViewTotal  : ==>  Preparing: select coalesce (sum(views),0) from myblog.t_blog
-2021-01-19 14:58:14.354 DEBUG 5608 --- [http-nio-8080-exec-6] c.f.myblog.dao.BlogDao.getBlogViewTotal  : ==> Parameters: 
-2021-01-19 14:58:14.355 DEBUG 5608 --- [http-nio-8080-exec-6] c.f.myblog.dao.BlogDao.getBlogViewTotal  : <==      Total: 1
-2021-01-19 14:58:14.357 DEBUG 5608 --- [http-nio-8080-exec-6] c.f.m.dao.BlogDao.getBlogCommentTotal    : ==>  Preparing: select count(*) from myblog.t_comment
-2021-01-19 14:58:14.357 DEBUG 5608 --- [http-nio-8080-exec-6] c.f.m.dao.BlogDao.getBlogCommentTotal    : ==> Parameters: 
-2021-01-19 14:58:14.359 DEBUG 5608 --- [http-nio-8080-exec-6] c.f.m.dao.BlogDao.getBlogCommentTotal    : <==      Total: 1
-2021-01-19 14:58:14.361 DEBUG 5608 --- [http-nio-8080-exec-6] c.f.m.dao.BlogDao.getBlogMessageTotal    : ==>  Preparing: select count(*) from myblog.t_message
-2021-01-19 14:58:14.361 DEBUG 5608 --- [http-nio-8080-exec-6] c.f.m.dao.BlogDao.getBlogMessageTotal    : ==> Parameters: 
-2021-01-19 14:58:14.362 DEBUG 5608 --- [http-nio-8080-exec-6] c.f.m.dao.BlogDao.getBlogMessageTotal    : <==      Total: 1
-2021-01-19 14:58:14.363  INFO 5608 --- [http-nio-8080-exec-6] com.fly.myblog.Aspect.LogAspect          : ------doAfter-------
-2021-01-19 14:58:14.363  INFO 5608 --- [http-nio-8080-exec-6] com.fly.myblog.Aspect.LogAspect          : Result : index :: blogMessage
-2021-01-19 15:02:40.964  INFO 16812 --- [restartedMain] com.fly.myblog.MyblogApplication         : Starting MyblogApplication on DESKTOP-HML8KQ7 with PID 16812 (started by 集联科技 in D:\搜狗高速下载\github_projects\myblog)
-2021-01-19 15:02:40.966 DEBUG 16812 --- [restartedMain] com.fly.myblog.MyblogApplication         : Running with Spring Boot v2.2.5.RELEASE, Spring v5.2.4.RELEASE
-2021-01-19 15:02:40.966  INFO 16812 --- [restartedMain] com.fly.myblog.MyblogApplication         : The following profiles are active: dev
-2021-01-19 15:02:40.996  INFO 16812 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2021-01-19 15:02:40.996  INFO 16812 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2021-01-19 15:02:42.009  INFO 16812 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-2021-01-19 15:02:42.017  INFO 16812 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2021-01-19 15:02:42.017  INFO 16812 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.31]
-2021-01-19 15:02:42.073  INFO 16812 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2021-01-19 15:02:42.073  INFO 16812 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1077 ms
-2021-01-19 15:02:42.611  INFO 16812 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
-2021-01-19 15:02:42.677  INFO 16812 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
-2021-01-19 15:02:42.933  INFO 16812 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2021-01-19 15:02:42.966  INFO 16812 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
-2021-01-19 15:02:42.969  INFO 16812 --- [restartedMain] com.fly.myblog.MyblogApplication         : Started MyblogApplication in 2.372 seconds (JVM running for 3.755)
-2021-01-19 15:03:01.333  INFO 16812 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2021-01-19 15:03:01.333  INFO 16812 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2021-01-19 15:03:01.341  INFO 16812 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 8 ms
-2021-01-19 15:03:01.376  INFO 16812 --- [http-nio-8080-exec-1] com.fly.myblog.Aspect.LogAspect          : Request: RequestLog{url='http://localhost:8080/', ip='0:0:0:0:0:0:0:1', classMethod='com.fly.myblog.controller.IndexController.index', args=[{}, 1, {}]}
-2021-01-19 15:03:01.388  INFO 16812 --- [http-nio-8080-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2021-01-19 15:03:01.492  INFO 16812 --- [http-nio-8080-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2021-01-19 15:03:01.562 DEBUG 16812 --- [http-nio-8080-exec-1] c.f.m.d.BlogDao.getFirstPageBlog_COUNT   : ==>  Preparing: SELECT count(0) FROM myblog.t_blog b, myblog.t_type t, myblog.t_user u WHERE b.type_id = t.id AND u.id = b.user_id
-2021-01-19 15:03:01.581 DEBUG 16812 --- [http-nio-8080-exec-1] c.f.m.d.BlogDao.getFirstPageBlog_COUNT   : ==> Parameters: 
-2021-01-19 15:03:01.599 DEBUG 16812 --- [http-nio-8080-exec-1] c.f.m.d.BlogDao.getFirstPageBlog_COUNT   : <==      Total: 1
-2021-01-19 15:03:01.601 DEBUG 16812 --- [http-nio-8080-exec-1] c.f.myblog.dao.BlogDao.getFirstPageBlog  : ==>  Preparing: select b.id,b.title,b.first_picture,b.views,b.comment_count,b.update_time,b.description, t.name, u.nickname,u.avatar from myblog.t_blog b,myblog.t_type t,myblog.t_user u where b.type_id = t.id and u.id = b.user_id order by b.update_time desc LIMIT ?
-2021-01-19 15:03:01.602 DEBUG 16812 --- [http-nio-8080-exec-1] c.f.myblog.dao.BlogDao.getFirstPageBlog  : ==> Parameters: 10(Integer)
-2021-01-19 15:03:01.605 DEBUG 16812 --- [http-nio-8080-exec-1] c.f.myblog.dao.BlogDao.getFirstPageBlog  : <==      Total: 4
-2021-01-19 15:03:01.612 DEBUG 16812 --- [http-nio-8080-exec-1] c.f.m.dao.BlogDao.getRecommendedBlog     : ==>  Preparing: select * from myblog.t_blog where t_blog.recommend = true order by t_blog.update_time desc limit 4
-2021-01-19 15:03:01.612 DEBUG 16812 --- [http-nio-8080-exec-1] c.f.m.dao.BlogDao.getRecommendedBlog     : ==> Parameters: 
-2021-01-19 15:03:01.618 DEBUG 16812 --- [http-nio-8080-exec-1] c.f.m.dao.BlogDao.getRecommendedBlog     : <==      Total: 4
-2021-01-19 15:03:01.620  INFO 16812 --- [http-nio-8080-exec-1] com.fly.myblog.Aspect.LogAspect          : ------doAfter-------
-2021-01-19 15:03:01.620  INFO 16812 --- [http-nio-8080-exec-1] com.fly.myblog.Aspect.LogAspect          : Result : index
-2021-01-19 15:03:02.037  INFO 16812 --- [http-nio-8080-exec-1] com.fly.myblog.Aspect.LogAspect          : Request: RequestLog{url='http://localhost:8080/footer/blogmessage', ip='0:0:0:0:0:0:0:1', classMethod='com.fly.myblog.controller.IndexController.blogMessage', args=[{}]}
-2021-01-19 15:03:02.039 DEBUG 16812 --- [http-nio-8080-exec-1] com.fly.myblog.dao.BlogDao.getBlogTotal  : ==>  Preparing: select count(*) from myblog.t_blog
-2021-01-19 15:03:02.039 DEBUG 16812 --- [http-nio-8080-exec-1] com.fly.myblog.dao.BlogDao.getBlogTotal  : ==> Parameters: 
-2021-01-19 15:03:02.041 DEBUG 16812 --- [http-nio-8080-exec-1] com.fly.myblog.dao.BlogDao.getBlogTotal  : <==      Total: 1
-2021-01-19 15:03:02.042 DEBUG 16812 --- [http-nio-8080-exec-1] c.f.myblog.dao.BlogDao.getBlogViewTotal  : ==>  Preparing: select coalesce (sum(views),0) from myblog.t_blog
-2021-01-19 15:03:02.043 DEBUG 16812 --- [http-nio-8080-exec-1] c.f.myblog.dao.BlogDao.getBlogViewTotal  : ==> Parameters: 
-2021-01-19 15:03:02.044 DEBUG 16812 --- [http-nio-8080-exec-1] c.f.myblog.dao.BlogDao.getBlogViewTotal  : <==      Total: 1
-2021-01-19 15:03:02.046 DEBUG 16812 --- [http-nio-8080-exec-1] c.f.m.dao.BlogDao.getBlogCommentTotal    : ==>  Preparing: select count(*) from myblog.t_comment
-2021-01-19 15:03:02.046 DEBUG 16812 --- [http-nio-8080-exec-1] c.f.m.dao.BlogDao.getBlogCommentTotal    : ==> Parameters: 
-2021-01-19 15:03:02.047 DEBUG 16812 --- [http-nio-8080-exec-1] c.f.m.dao.BlogDao.getBlogCommentTotal    : <==      Total: 1
-2021-01-19 15:03:02.049 DEBUG 16812 --- [http-nio-8080-exec-1] c.f.m.dao.BlogDao.getBlogMessageTotal    : ==>  Preparing: select count(*) from myblog.t_message
-2021-01-19 15:03:02.049 DEBUG 16812 --- [http-nio-8080-exec-1] c.f.m.dao.BlogDao.getBlogMessageTotal    : ==> Parameters: 
-2021-01-19 15:03:02.051 DEBUG 16812 --- [http-nio-8080-exec-1] c.f.m.dao.BlogDao.getBlogMessageTotal    : <==      Total: 1
-2021-01-19 15:03:02.053  INFO 16812 --- [http-nio-8080-exec-1] com.fly.myblog.Aspect.LogAspect          : ------doAfter-------
-2021-01-19 15:03:02.053  INFO 16812 --- [http-nio-8080-exec-1] com.fly.myblog.Aspect.LogAspect          : Result : index :: blogMessage
-2021-01-19 15:03:04.516  INFO 16812 --- [http-nio-8080-exec-5] com.fly.myblog.Aspect.LogAspect          : Request: RequestLog{url='http://localhost:8080/blog/79', ip='0:0:0:0:0:0:0:1', classMethod='com.fly.myblog.controller.IndexController.blog', args=[79, {}]}
-2021-01-19 15:03:15.575 DEBUG 16812 --- [http-nio-8080-exec-5] c.f.myblog.dao.BlogDao.getDetailedBlog   : ==>  Preparing: select b.id bid,b.first_picture,b.flag,b.title,b.content,b.views,b.comment_count,b.update_time,b.commentabled,b.share_statement,b.appreciation, u.nickname,u.avatar,t.name from myblog.t_blog b,myblog.t_user u, myblog.t_type t where b.user_id = u.id and b.type_id = t.id and b.id = ?
-2021-01-19 15:03:15.576 DEBUG 16812 --- [http-nio-8080-exec-5] c.f.myblog.dao.BlogDao.getDetailedBlog   : ==> Parameters: 79(Long)
-2021-01-19 15:03:15.581 DEBUG 16812 --- [http-nio-8080-exec-5] c.f.myblog.dao.BlogDao.getDetailedBlog   : <==      Total: 1
-2021-01-19 15:04:15.457 DEBUG 16812 --- [http-nio-8080-exec-5] com.fly.myblog.dao.BlogDao.updateViews   : ==>  Preparing: update myblog.t_blog b set b.views = b.views+1 where b.id = ?
-2021-01-19 15:04:15.458 DEBUG 16812 --- [http-nio-8080-exec-5] com.fly.myblog.dao.BlogDao.updateViews   : ==> Parameters: 79(Long)
-2021-01-19 15:04:15.460 DEBUG 16812 --- [http-nio-8080-exec-5] com.fly.myblog.dao.BlogDao.updateViews   : <==    Updates: 1
-2021-01-19 15:04:18.180 DEBUG 16812 --- [http-nio-8080-exec-5] c.f.m.dao.BlogDao.getCommentCountById    : ==>  Preparing: update myblog.t_blog b set b.comment_count = ( select count(*) from myblog.t_comment c where c.blog_id = ? and b.id = ? ) WHERE b.id = ?
-2021-01-19 15:04:18.181 DEBUG 16812 --- [http-nio-8080-exec-5] c.f.m.dao.BlogDao.getCommentCountById    : ==> Parameters: 79(Long), 79(Long), 79(Long)
-2021-01-19 15:04:18.183 DEBUG 16812 --- [http-nio-8080-exec-5] c.f.m.dao.BlogDao.getCommentCountById    : <==    Updates: 1
-2021-01-19 15:12:02.477  WARN 16812 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=7m54s473ms610µs).
-2021-01-19 15:12:41.582  INFO 16812 --- [http-nio-8080-exec-5] com.fly.myblog.Aspect.LogAspect          : ------doAfter-------
-2021-01-19 15:12:41.583  INFO 16812 --- [http-nio-8080-exec-5] com.fly.myblog.Aspect.LogAspect          : Result : blog
-2021-01-19 15:12:41.977  INFO 16812 --- [http-nio-8080-exec-2] com.fly.myblog.Aspect.LogAspect          : Request: RequestLog{url='http://localhost:8080/footer/blogmessage', ip='0:0:0:0:0:0:0:1', classMethod='com.fly.myblog.controller.IndexController.blogMessage', args=[{}]}
-2021-01-19 15:12:41.978 DEBUG 16812 --- [http-nio-8080-exec-2] com.fly.myblog.dao.BlogDao.getBlogTotal  : ==>  Preparing: select count(*) from myblog.t_blog
-2021-01-19 15:12:41.980 DEBUG 16812 --- [http-nio-8080-exec-2] com.fly.myblog.dao.BlogDao.getBlogTotal  : ==> Parameters: 
-2021-01-19 15:12:41.981 DEBUG 16812 --- [http-nio-8080-exec-2] com.fly.myblog.dao.BlogDao.getBlogTotal  : <==      Total: 1
-2021-01-19 15:12:41.983 DEBUG 16812 --- [http-nio-8080-exec-2] c.f.myblog.dao.BlogDao.getBlogViewTotal  : ==>  Preparing: select coalesce (sum(views),0) from myblog.t_blog
-2021-01-19 15:12:41.983 DEBUG 16812 --- [http-nio-8080-exec-2] c.f.myblog.dao.BlogDao.getBlogViewTotal  : ==> Parameters: 
-2021-01-19 15:12:41.984 DEBUG 16812 --- [http-nio-8080-exec-2] c.f.myblog.dao.BlogDao.getBlogViewTotal  : <==      Total: 1
-2021-01-19 15:12:41.985 DEBUG 16812 --- [http-nio-8080-exec-2] c.f.m.dao.BlogDao.getBlogCommentTotal    : ==>  Preparing: select count(*) from myblog.t_comment
-2021-01-19 15:12:41.985 DEBUG 16812 --- [http-nio-8080-exec-2] c.f.m.dao.BlogDao.getBlogCommentTotal    : ==> Parameters: 
-2021-01-19 15:12:41.986 DEBUG 16812 --- [http-nio-8080-exec-2] c.f.m.dao.BlogDao.getBlogCommentTotal    : <==      Total: 1
-2021-01-19 15:12:41.987 DEBUG 16812 --- [http-nio-8080-exec-2] c.f.m.dao.BlogDao.getBlogMessageTotal    : ==>  Preparing: select count(*) from myblog.t_message
-2021-01-19 15:12:41.988 DEBUG 16812 --- [http-nio-8080-exec-2] c.f.m.dao.BlogDao.getBlogMessageTotal    : ==> Parameters: 
-2021-01-19 15:12:41.988 DEBUG 16812 --- [http-nio-8080-exec-2] c.f.m.dao.BlogDao.getBlogMessageTotal    : <==      Total: 1
-2021-01-19 15:12:41.990  INFO 16812 --- [http-nio-8080-exec-2] com.fly.myblog.Aspect.LogAspect          : ------doAfter-------
-2021-01-19 15:12:41.990  INFO 16812 --- [http-nio-8080-exec-2] com.fly.myblog.Aspect.LogAspect          : Result : index :: blogMessage
-2021-01-19 15:12:42.101  INFO 16812 --- [http-nio-8080-exec-9] com.fly.myblog.Aspect.LogAspect          : Request: RequestLog{url='http://localhost:8080/comments/79', ip='0:0:0:0:0:0:0:1', classMethod='com.fly.myblog.controller.CommentController.comments', args=[79, {}]}
-2021-01-19 15:12:42.106 DEBUG 16812 --- [http-nio-8080-exec-9] c.f.m.d.C.findByBlogIdParentIdNull       : ==>  Preparing: select * from myblog.t_comment c where c.blog_id = ? and c.parent_comment_id = ? order by c.create_time desc
-2021-01-19 15:12:42.107 DEBUG 16812 --- [http-nio-8080-exec-9] c.f.m.d.C.findByBlogIdParentIdNull       : ==> Parameters: 79(Long), -1(Long)
-2021-01-19 15:12:42.108 DEBUG 16812 --- [http-nio-8080-exec-9] c.f.m.d.C.findByBlogIdParentIdNull       : <==      Total: 0
-2021-01-19 15:12:42.109  INFO 16812 --- [http-nio-8080-exec-9] com.fly.myblog.Aspect.LogAspect          : ------doAfter-------
-2021-01-19 15:12:42.109  INFO 16812 --- [http-nio-8080-exec-9] com.fly.myblog.Aspect.LogAspect          : Result : blog :: commentList
-2021-01-19 15:58:27.891  WARN 16812 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=6m15s629ms389µs400ns).
-2021-01-19 16:24:04.117  WARN 16812 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=14m36s32ms831µs900ns).
-2021-01-19 17:24:10.970  WARN 16812 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=23m36s238ms871µs400ns).
-2021-01-19 17:24:26.576  INFO 16812 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
-2021-01-19 17:24:26.576  INFO 16812 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2021-01-19 17:24:26.581  INFO 16812 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2021-01-25 11:15:32.720  INFO 20664 --- [restartedMain] com.fly.myblog.MyblogApplication         : Starting MyblogApplication on DESKTOP-HML8KQ7 with PID 20664 (started by 集联科技 in D:\搜狗高速下载\github_projects\myblog)
+2021-01-25 11:15:32.726 DEBUG 20664 --- [restartedMain] com.fly.myblog.MyblogApplication         : Running with Spring Boot v2.2.5.RELEASE, Spring v5.2.4.RELEASE
+2021-01-25 11:15:32.726  INFO 20664 --- [restartedMain] com.fly.myblog.MyblogApplication         : The following profiles are active: dev
+2021-01-25 11:15:32.762  INFO 20664 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-01-25 11:15:32.764  INFO 20664 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-01-25 11:15:34.270  INFO 20664 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2021-01-25 11:15:34.281  INFO 20664 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-01-25 11:15:34.281  INFO 20664 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.31]
+2021-01-25 11:15:34.352  INFO 20664 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-01-25 11:15:34.353  INFO 20664 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1589 ms
+2021-01-25 11:15:34.943  INFO 20664 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-01-25 11:15:35.009  INFO 20664 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2021-01-25 11:15:35.285  INFO 20664 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2021-01-25 11:15:35.316  INFO 20664 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2021-01-25 11:15:35.317  INFO 20664 --- [restartedMain] com.fly.myblog.MyblogApplication         : Started MyblogApplication in 2.931 seconds (JVM running for 3.849)
+2021-01-25 11:15:51.986  INFO 20664 --- [http-nio-8080-exec-3] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-01-25 11:15:51.987  INFO 20664 --- [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-01-25 11:15:51.995  INFO 20664 --- [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Completed initialization in 8 ms
+2021-01-25 11:15:52.027  INFO 20664 --- [http-nio-8080-exec-3] com.fly.myblog.Aspect.LogAspect          : Request: RequestLog{url='http://localhost:8080/', ip='0:0:0:0:0:0:0:1', classMethod='com.fly.myblog.controller.IndexController.index', args=[{}, 1, {}]}
+2021-01-25 11:15:52.038  INFO 20664 --- [http-nio-8080-exec-3] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-01-25 11:15:52.180  INFO 20664 --- [http-nio-8080-exec-3] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-01-25 11:15:52.253 DEBUG 20664 --- [http-nio-8080-exec-3] c.f.m.d.BlogDao.getFirstPageBlog_COUNT   : ==>  Preparing: SELECT count(0) FROM myblog.t_blog b, myblog.t_type t, myblog.t_user u WHERE b.type_id = t.id AND u.id = b.user_id
+2021-01-25 11:15:52.272 DEBUG 20664 --- [http-nio-8080-exec-3] c.f.m.d.BlogDao.getFirstPageBlog_COUNT   : ==> Parameters: 
+2021-01-25 11:15:52.291 DEBUG 20664 --- [http-nio-8080-exec-3] c.f.m.d.BlogDao.getFirstPageBlog_COUNT   : <==      Total: 1
+2021-01-25 11:15:52.293 DEBUG 20664 --- [http-nio-8080-exec-3] c.f.myblog.dao.BlogDao.getFirstPageBlog  : ==>  Preparing: select b.id,b.title,b.first_picture,b.views,b.comment_count,b.update_time,b.description, t.name, u.nickname,u.avatar from myblog.t_blog b,myblog.t_type t,myblog.t_user u where b.type_id = t.id and u.id = b.user_id order by b.update_time desc LIMIT ?
+2021-01-25 11:15:52.293 DEBUG 20664 --- [http-nio-8080-exec-3] c.f.myblog.dao.BlogDao.getFirstPageBlog  : ==> Parameters: 10(Integer)
+2021-01-25 11:15:52.298 DEBUG 20664 --- [http-nio-8080-exec-3] c.f.myblog.dao.BlogDao.getFirstPageBlog  : <==      Total: 4
+2021-01-25 11:15:52.302 DEBUG 20664 --- [http-nio-8080-exec-3] c.f.m.dao.BlogDao.getRecommendedBlog     : ==>  Preparing: select * from myblog.t_blog where t_blog.recommend = true order by t_blog.update_time desc limit 4
+2021-01-25 11:15:52.303 DEBUG 20664 --- [http-nio-8080-exec-3] c.f.m.dao.BlogDao.getRecommendedBlog     : ==> Parameters: 
+2021-01-25 11:15:52.307 DEBUG 20664 --- [http-nio-8080-exec-3] c.f.m.dao.BlogDao.getRecommendedBlog     : <==      Total: 4
+2021-01-25 11:15:52.310  INFO 20664 --- [http-nio-8080-exec-3] com.fly.myblog.Aspect.LogAspect          : ------doAfter-------
+2021-01-25 11:15:52.310  INFO 20664 --- [http-nio-8080-exec-3] com.fly.myblog.Aspect.LogAspect          : Result : index
+2021-01-25 11:15:52.878  INFO 20664 --- [http-nio-8080-exec-2] com.fly.myblog.Aspect.LogAspect          : Request: RequestLog{url='http://localhost:8080/footer/blogmessage', ip='0:0:0:0:0:0:0:1', classMethod='com.fly.myblog.controller.IndexController.blogMessage', args=[{}]}
+2021-01-25 11:15:52.880 DEBUG 20664 --- [http-nio-8080-exec-2] com.fly.myblog.dao.BlogDao.getBlogTotal  : ==>  Preparing: select count(*) from myblog.t_blog
+2021-01-25 11:15:52.881 DEBUG 20664 --- [http-nio-8080-exec-2] com.fly.myblog.dao.BlogDao.getBlogTotal  : ==> Parameters: 
+2021-01-25 11:15:52.882 DEBUG 20664 --- [http-nio-8080-exec-2] com.fly.myblog.dao.BlogDao.getBlogTotal  : <==      Total: 1
+2021-01-25 11:15:52.884 DEBUG 20664 --- [http-nio-8080-exec-2] c.f.myblog.dao.BlogDao.getBlogViewTotal  : ==>  Preparing: select coalesce (sum(views),0) from myblog.t_blog
+2021-01-25 11:15:52.885 DEBUG 20664 --- [http-nio-8080-exec-2] c.f.myblog.dao.BlogDao.getBlogViewTotal  : ==> Parameters: 
+2021-01-25 11:15:52.887 DEBUG 20664 --- [http-nio-8080-exec-2] c.f.myblog.dao.BlogDao.getBlogViewTotal  : <==      Total: 1
+2021-01-25 11:15:52.888 DEBUG 20664 --- [http-nio-8080-exec-2] c.f.m.dao.BlogDao.getBlogCommentTotal    : ==>  Preparing: select count(*) from myblog.t_comment
+2021-01-25 11:15:52.888 DEBUG 20664 --- [http-nio-8080-exec-2] c.f.m.dao.BlogDao.getBlogCommentTotal    : ==> Parameters: 
+2021-01-25 11:15:52.889 DEBUG 20664 --- [http-nio-8080-exec-2] c.f.m.dao.BlogDao.getBlogCommentTotal    : <==      Total: 1
+2021-01-25 11:15:52.891 DEBUG 20664 --- [http-nio-8080-exec-2] c.f.m.dao.BlogDao.getBlogMessageTotal    : ==>  Preparing: select count(*) from myblog.t_message
+2021-01-25 11:15:52.891 DEBUG 20664 --- [http-nio-8080-exec-2] c.f.m.dao.BlogDao.getBlogMessageTotal    : ==> Parameters: 
+2021-01-25 11:15:52.894 DEBUG 20664 --- [http-nio-8080-exec-2] c.f.m.dao.BlogDao.getBlogMessageTotal    : <==      Total: 1
+2021-01-25 11:15:52.895  INFO 20664 --- [http-nio-8080-exec-2] com.fly.myblog.Aspect.LogAspect          : ------doAfter-------
+2021-01-25 11:15:52.895  INFO 20664 --- [http-nio-8080-exec-2] com.fly.myblog.Aspect.LogAspect          : Result : index :: blogMessage
+2021-01-25 11:16:08.551  INFO 20664 --- [http-nio-8080-exec-9] com.fly.myblog.Aspect.LogAspect          : Request: RequestLog{url='http://localhost:8080/blog/79', ip='0:0:0:0:0:0:0:1', classMethod='com.fly.myblog.controller.IndexController.blog', args=[79, {}]}
+2021-01-25 11:16:08.554 DEBUG 20664 --- [http-nio-8080-exec-9] c.f.myblog.dao.BlogDao.getDetailedBlog   : ==>  Preparing: select b.id bid,b.first_picture,b.flag,b.title,b.content,b.views,b.comment_count,b.update_time,b.commentabled,b.share_statement,b.appreciation, u.nickname,u.avatar,t.name from myblog.t_blog b,myblog.t_user u, myblog.t_type t where b.user_id = u.id and b.type_id = t.id and b.id = ?
+2021-01-25 11:16:08.554 DEBUG 20664 --- [http-nio-8080-exec-9] c.f.myblog.dao.BlogDao.getDetailedBlog   : ==> Parameters: 79(Long)
+2021-01-25 11:16:08.556 DEBUG 20664 --- [http-nio-8080-exec-9] c.f.myblog.dao.BlogDao.getDetailedBlog   : <==      Total: 1
+2021-01-25 11:16:08.584 DEBUG 20664 --- [http-nio-8080-exec-9] com.fly.myblog.dao.BlogDao.updateViews   : ==>  Preparing: update myblog.t_blog b set b.views = b.views+1 where b.id = ?
+2021-01-25 11:16:08.585 DEBUG 20664 --- [http-nio-8080-exec-9] com.fly.myblog.dao.BlogDao.updateViews   : ==> Parameters: 79(Long)
+2021-01-25 11:16:08.586 DEBUG 20664 --- [http-nio-8080-exec-9] com.fly.myblog.dao.BlogDao.updateViews   : <==    Updates: 1
+2021-01-25 11:16:08.587 DEBUG 20664 --- [http-nio-8080-exec-9] c.f.m.dao.BlogDao.getCommentCountById    : ==>  Preparing: update myblog.t_blog b set b.comment_count = ( select count(*) from myblog.t_comment c where c.blog_id = ? and b.id = ? ) WHERE b.id = ?
+2021-01-25 11:16:08.587 DEBUG 20664 --- [http-nio-8080-exec-9] c.f.m.dao.BlogDao.getCommentCountById    : ==> Parameters: 79(Long), 79(Long), 79(Long)
+2021-01-25 11:16:08.590 DEBUG 20664 --- [http-nio-8080-exec-9] c.f.m.dao.BlogDao.getCommentCountById    : <==    Updates: 1
+2021-01-25 11:16:08.591  INFO 20664 --- [http-nio-8080-exec-9] com.fly.myblog.Aspect.LogAspect          : ------doAfter-------
+2021-01-25 11:16:08.591  INFO 20664 --- [http-nio-8080-exec-9] com.fly.myblog.Aspect.LogAspect          : Result : blog
+2021-01-25 11:16:08.947  INFO 20664 --- [http-nio-8080-exec-2] com.fly.myblog.Aspect.LogAspect          : Request: RequestLog{url='http://localhost:8080/footer/blogmessage', ip='0:0:0:0:0:0:0:1', classMethod='com.fly.myblog.controller.IndexController.blogMessage', args=[{}]}
+2021-01-25 11:16:08.948 DEBUG 20664 --- [http-nio-8080-exec-2] com.fly.myblog.dao.BlogDao.getBlogTotal  : ==>  Preparing: select count(*) from myblog.t_blog
+2021-01-25 11:16:08.949 DEBUG 20664 --- [http-nio-8080-exec-2] com.fly.myblog.dao.BlogDao.getBlogTotal  : ==> Parameters: 
+2021-01-25 11:16:08.950 DEBUG 20664 --- [http-nio-8080-exec-2] com.fly.myblog.dao.BlogDao.getBlogTotal  : <==      Total: 1
+2021-01-25 11:16:08.952 DEBUG 20664 --- [http-nio-8080-exec-2] c.f.myblog.dao.BlogDao.getBlogViewTotal  : ==>  Preparing: select coalesce (sum(views),0) from myblog.t_blog
+2021-01-25 11:16:08.952 DEBUG 20664 --- [http-nio-8080-exec-2] c.f.myblog.dao.BlogDao.getBlogViewTotal  : ==> Parameters: 
+2021-01-25 11:16:08.953 DEBUG 20664 --- [http-nio-8080-exec-2] c.f.myblog.dao.BlogDao.getBlogViewTotal  : <==      Total: 1
+2021-01-25 11:16:08.954 DEBUG 20664 --- [http-nio-8080-exec-2] c.f.m.dao.BlogDao.getBlogCommentTotal    : ==>  Preparing: select count(*) from myblog.t_comment
+2021-01-25 11:16:08.954 DEBUG 20664 --- [http-nio-8080-exec-2] c.f.m.dao.BlogDao.getBlogCommentTotal    : ==> Parameters: 
+2021-01-25 11:16:08.955 DEBUG 20664 --- [http-nio-8080-exec-2] c.f.m.dao.BlogDao.getBlogCommentTotal    : <==      Total: 1
+2021-01-25 11:16:08.956 DEBUG 20664 --- [http-nio-8080-exec-2] c.f.m.dao.BlogDao.getBlogMessageTotal    : ==>  Preparing: select count(*) from myblog.t_message
+2021-01-25 11:16:08.957 DEBUG 20664 --- [http-nio-8080-exec-2] c.f.m.dao.BlogDao.getBlogMessageTotal    : ==> Parameters: 
+2021-01-25 11:16:08.959 DEBUG 20664 --- [http-nio-8080-exec-2] c.f.m.dao.BlogDao.getBlogMessageTotal    : <==      Total: 1
+2021-01-25 11:16:08.960  INFO 20664 --- [http-nio-8080-exec-2] com.fly.myblog.Aspect.LogAspect          : ------doAfter-------
+2021-01-25 11:16:08.960  INFO 20664 --- [http-nio-8080-exec-2] com.fly.myblog.Aspect.LogAspect          : Result : index :: blogMessage
+2021-01-25 11:16:09.068  INFO 20664 --- [http-nio-8080-exec-5] com.fly.myblog.Aspect.LogAspect          : Request: RequestLog{url='http://localhost:8080/comments/79', ip='0:0:0:0:0:0:0:1', classMethod='com.fly.myblog.controller.CommentController.comments', args=[79, {}]}
+2021-01-25 11:16:09.075 DEBUG 20664 --- [http-nio-8080-exec-5] c.f.m.d.C.findByBlogIdParentIdNull       : ==>  Preparing: select * from myblog.t_comment c where c.blog_id = ? and c.parent_comment_id = ? order by c.create_time desc
+2021-01-25 11:16:09.076 DEBUG 20664 --- [http-nio-8080-exec-5] c.f.m.d.C.findByBlogIdParentIdNull       : ==> Parameters: 79(Long), -1(Long)
+2021-01-25 11:16:09.079 DEBUG 20664 --- [http-nio-8080-exec-5] c.f.m.d.C.findByBlogIdParentIdNull       : <==      Total: 0
+2021-01-25 11:16:09.081  INFO 20664 --- [http-nio-8080-exec-5] com.fly.myblog.Aspect.LogAspect          : ------doAfter-------
+2021-01-25 11:16:09.081  INFO 20664 --- [http-nio-8080-exec-5] com.fly.myblog.Aspect.LogAspect          : Result : blog :: commentList
+2021-01-25 11:16:37.125  INFO 20664 --- [http-nio-8080-exec-6] com.fly.myblog.Aspect.LogAspect          : Request: RequestLog{url='http://localhost:8080/types/-1', ip='0:0:0:0:0:0:0:1', classMethod='com.fly.myblog.controller.TypeShowController.types', args=[1, -1, {}]}
+2021-01-25 11:16:37.132 DEBUG 20664 --- [http-nio-8080-exec-6] c.f.m.dao.TypeDao.getAllTypeAndBlog      : ==>  Preparing: select t.id tid, t.name, b.id bid, b.title,b.type_id from myblog.t_type t,myblog.t_blog b where t.id = b.type_id
+2021-01-25 11:16:37.133 DEBUG 20664 --- [http-nio-8080-exec-6] c.f.m.dao.TypeDao.getAllTypeAndBlog      : ==> Parameters: 
+2021-01-25 11:16:37.136 DEBUG 20664 --- [http-nio-8080-exec-6] c.f.m.dao.TypeDao.getAllTypeAndBlog      : <==      Total: 4
+2021-01-25 11:16:37.141 DEBUG 20664 --- [http-nio-8080-exec-6] com.fly.myblog.dao.BlogDao.getByTypeId   : ==>  Preparing: select b.id,b.title,b.first_picture, b.views, b.comment_count, b.update_time, b.description,t.name ,u.nickname, u.avatar from myblog.t_blog b, myblog.t_type t,myblog.t_user u where b.type_id = t.id and u.id = b.user_id and b.type_id = ? order by b.update_time desc
+2021-01-25 11:16:37.141 DEBUG 20664 --- [http-nio-8080-exec-6] com.fly.myblog.dao.BlogDao.getByTypeId   : ==> Parameters: 1(Long)
+2021-01-25 11:16:37.176 DEBUG 20664 --- [http-nio-8080-exec-6] com.fly.myblog.dao.BlogDao.getByTypeId   : <==      Total: 2
+2021-01-25 11:16:37.178  INFO 20664 --- [http-nio-8080-exec-6] com.fly.myblog.Aspect.LogAspect          : ------doAfter-------
+2021-01-25 11:16:37.178  INFO 20664 --- [http-nio-8080-exec-6] com.fly.myblog.Aspect.LogAspect          : Result : types
+2021-01-25 11:16:37.253  INFO 20664 --- [http-nio-8080-exec-3] com.fly.myblog.Aspect.LogAspect          : Request: RequestLog{url='http://localhost:8080/footer/blogmessage', ip='0:0:0:0:0:0:0:1', classMethod='com.fly.myblog.controller.IndexController.blogMessage', args=[{}]}
+2021-01-25 11:16:37.254 DEBUG 20664 --- [http-nio-8080-exec-3] com.fly.myblog.dao.BlogDao.getBlogTotal  : ==>  Preparing: select count(*) from myblog.t_blog
+2021-01-25 11:16:37.254 DEBUG 20664 --- [http-nio-8080-exec-3] com.fly.myblog.dao.BlogDao.getBlogTotal  : ==> Parameters: 
+2021-01-25 11:16:37.258 DEBUG 20664 --- [http-nio-8080-exec-3] com.fly.myblog.dao.BlogDao.getBlogTotal  : <==      Total: 1
+2021-01-25 11:16:37.261 DEBUG 20664 --- [http-nio-8080-exec-3] c.f.myblog.dao.BlogDao.getBlogViewTotal  : ==>  Preparing: select coalesce (sum(views),0) from myblog.t_blog
+2021-01-25 11:16:37.262 DEBUG 20664 --- [http-nio-8080-exec-3] c.f.myblog.dao.BlogDao.getBlogViewTotal  : ==> Parameters: 
+2021-01-25 11:16:37.263 DEBUG 20664 --- [http-nio-8080-exec-3] c.f.myblog.dao.BlogDao.getBlogViewTotal  : <==      Total: 1
+2021-01-25 11:16:37.265 DEBUG 20664 --- [http-nio-8080-exec-3] c.f.m.dao.BlogDao.getBlogCommentTotal    : ==>  Preparing: select count(*) from myblog.t_comment
+2021-01-25 11:16:37.265 DEBUG 20664 --- [http-nio-8080-exec-3] c.f.m.dao.BlogDao.getBlogCommentTotal    : ==> Parameters: 
+2021-01-25 11:16:37.267 DEBUG 20664 --- [http-nio-8080-exec-3] c.f.m.dao.BlogDao.getBlogCommentTotal    : <==      Total: 1
+2021-01-25 11:16:37.267 DEBUG 20664 --- [http-nio-8080-exec-3] c.f.m.dao.BlogDao.getBlogMessageTotal    : ==>  Preparing: select count(*) from myblog.t_message
+2021-01-25 11:16:37.268 DEBUG 20664 --- [http-nio-8080-exec-3] c.f.m.dao.BlogDao.getBlogMessageTotal    : ==> Parameters: 
+2021-01-25 11:16:37.270 DEBUG 20664 --- [http-nio-8080-exec-3] c.f.m.dao.BlogDao.getBlogMessageTotal    : <==      Total: 1
+2021-01-25 11:16:37.270  INFO 20664 --- [http-nio-8080-exec-3] com.fly.myblog.Aspect.LogAspect          : ------doAfter-------
+2021-01-25 11:16:37.270  INFO 20664 --- [http-nio-8080-exec-3] com.fly.myblog.Aspect.LogAspect          : Result : index :: blogMessage
+2021-01-25 11:16:40.279  INFO 20664 --- [http-nio-8080-exec-5] com.fly.myblog.Aspect.LogAspect          : Request: RequestLog{url='http://localhost:8080/archives', ip='0:0:0:0:0:0:0:1', classMethod='com.fly.myblog.controller.ArchiveShowController.archive', args=[{}]}
+2021-01-25 11:16:40.283 DEBUG 20664 --- [http-nio-8080-exec-5] com.fly.myblog.dao.BlogDao.getAllBlog    : ==>  Preparing: select b.id,b.title,b.update_time,b.recommend,b.published,b.type_id,t.id,t.name from myblog.t_blog b left join myblog.t_type t on b.type_id = t.id order by b.update_time desc
+2021-01-25 11:16:40.284 DEBUG 20664 --- [http-nio-8080-exec-5] com.fly.myblog.dao.BlogDao.getAllBlog    : ==> Parameters: 
+2021-01-25 11:16:40.285 DEBUG 20664 --- [http-nio-8080-exec-5] com.fly.myblog.dao.BlogDao.getAllBlog    : <==      Total: 4
+2021-01-25 11:16:40.286  INFO 20664 --- [http-nio-8080-exec-5] com.fly.myblog.Aspect.LogAspect          : ------doAfter-------
+2021-01-25 11:16:40.287  INFO 20664 --- [http-nio-8080-exec-5] com.fly.myblog.Aspect.LogAspect          : Result : archives
+2021-01-25 11:16:40.345  INFO 20664 --- [http-nio-8080-exec-2] com.fly.myblog.Aspect.LogAspect          : Request: RequestLog{url='http://localhost:8080/footer/blogmessage', ip='0:0:0:0:0:0:0:1', classMethod='com.fly.myblog.controller.IndexController.blogMessage', args=[{}]}
+2021-01-25 11:16:40.346 DEBUG 20664 --- [http-nio-8080-exec-2] com.fly.myblog.dao.BlogDao.getBlogTotal  : ==>  Preparing: select count(*) from myblog.t_blog
+2021-01-25 11:16:40.346 DEBUG 20664 --- [http-nio-8080-exec-2] com.fly.myblog.dao.BlogDao.getBlogTotal  : ==> Parameters: 
+2021-01-25 11:16:40.348 DEBUG 20664 --- [http-nio-8080-exec-2] com.fly.myblog.dao.BlogDao.getBlogTotal  : <==      Total: 1
+2021-01-25 11:16:40.350 DEBUG 20664 --- [http-nio-8080-exec-2] c.f.myblog.dao.BlogDao.getBlogViewTotal  : ==>  Preparing: select coalesce (sum(views),0) from myblog.t_blog
+2021-01-25 11:16:40.350 DEBUG 20664 --- [http-nio-8080-exec-2] c.f.myblog.dao.BlogDao.getBlogViewTotal  : ==> Parameters: 
+2021-01-25 11:16:40.351 DEBUG 20664 --- [http-nio-8080-exec-2] c.f.myblog.dao.BlogDao.getBlogViewTotal  : <==      Total: 1
+2021-01-25 11:16:40.352 DEBUG 20664 --- [http-nio-8080-exec-2] c.f.m.dao.BlogDao.getBlogCommentTotal    : ==>  Preparing: select count(*) from myblog.t_comment
+2021-01-25 11:16:40.353 DEBUG 20664 --- [http-nio-8080-exec-2] c.f.m.dao.BlogDao.getBlogCommentTotal    : ==> Parameters: 
+2021-01-25 11:16:40.354 DEBUG 20664 --- [http-nio-8080-exec-2] c.f.m.dao.BlogDao.getBlogCommentTotal    : <==      Total: 1
+2021-01-25 11:16:40.355 DEBUG 20664 --- [http-nio-8080-exec-2] c.f.m.dao.BlogDao.getBlogMessageTotal    : ==>  Preparing: select count(*) from myblog.t_message
+2021-01-25 11:16:40.355 DEBUG 20664 --- [http-nio-8080-exec-2] c.f.m.dao.BlogDao.getBlogMessageTotal    : ==> Parameters: 
+2021-01-25 11:16:40.357 DEBUG 20664 --- [http-nio-8080-exec-2] c.f.m.dao.BlogDao.getBlogMessageTotal    : <==      Total: 1
+2021-01-25 11:16:40.358  INFO 20664 --- [http-nio-8080-exec-2] com.fly.myblog.Aspect.LogAspect          : ------doAfter-------
+2021-01-25 11:16:40.358  INFO 20664 --- [http-nio-8080-exec-2] com.fly.myblog.Aspect.LogAspect          : Result : index :: blogMessage
+2021-01-25 11:16:43.512  INFO 20664 --- [http-nio-8080-exec-8] com.fly.myblog.Aspect.LogAspect          : Request: RequestLog{url='http://localhost:8080/message', ip='0:0:0:0:0:0:0:1', classMethod='com.fly.myblog.controller.MessageController.message', args=[]}
+2021-01-25 11:16:43.515  INFO 20664 --- [http-nio-8080-exec-8] com.fly.myblog.Aspect.LogAspect          : ------doAfter-------
+2021-01-25 11:16:43.515  INFO 20664 --- [http-nio-8080-exec-8] com.fly.myblog.Aspect.LogAspect          : Result : message
+2021-01-25 11:16:43.564  INFO 20664 --- [http-nio-8080-exec-5] com.fly.myblog.Aspect.LogAspect          : Request: RequestLog{url='http://localhost:8080/footer/blogmessage', ip='0:0:0:0:0:0:0:1', classMethod='com.fly.myblog.controller.IndexController.blogMessage', args=[{}]}
+2021-01-25 11:16:43.566 DEBUG 20664 --- [http-nio-8080-exec-5] com.fly.myblog.dao.BlogDao.getBlogTotal  : ==>  Preparing: select count(*) from myblog.t_blog
+2021-01-25 11:16:43.566 DEBUG 20664 --- [http-nio-8080-exec-5] com.fly.myblog.dao.BlogDao.getBlogTotal  : ==> Parameters: 
+2021-01-25 11:16:43.567 DEBUG 20664 --- [http-nio-8080-exec-5] com.fly.myblog.dao.BlogDao.getBlogTotal  : <==      Total: 1
+2021-01-25 11:16:43.568 DEBUG 20664 --- [http-nio-8080-exec-5] c.f.myblog.dao.BlogDao.getBlogViewTotal  : ==>  Preparing: select coalesce (sum(views),0) from myblog.t_blog
+2021-01-25 11:16:43.568 DEBUG 20664 --- [http-nio-8080-exec-5] c.f.myblog.dao.BlogDao.getBlogViewTotal  : ==> Parameters: 
+2021-01-25 11:16:43.569 DEBUG 20664 --- [http-nio-8080-exec-5] c.f.myblog.dao.BlogDao.getBlogViewTotal  : <==      Total: 1
+2021-01-25 11:16:43.570 DEBUG 20664 --- [http-nio-8080-exec-5] c.f.m.dao.BlogDao.getBlogCommentTotal    : ==>  Preparing: select count(*) from myblog.t_comment
+2021-01-25 11:16:43.570 DEBUG 20664 --- [http-nio-8080-exec-5] c.f.m.dao.BlogDao.getBlogCommentTotal    : ==> Parameters: 
+2021-01-25 11:16:43.572 DEBUG 20664 --- [http-nio-8080-exec-5] c.f.m.dao.BlogDao.getBlogCommentTotal    : <==      Total: 1
+2021-01-25 11:16:43.573 DEBUG 20664 --- [http-nio-8080-exec-5] c.f.m.dao.BlogDao.getBlogMessageTotal    : ==>  Preparing: select count(*) from myblog.t_message
+2021-01-25 11:16:43.573 DEBUG 20664 --- [http-nio-8080-exec-5] c.f.m.dao.BlogDao.getBlogMessageTotal    : ==> Parameters: 
+2021-01-25 11:16:43.575 DEBUG 20664 --- [http-nio-8080-exec-5] c.f.m.dao.BlogDao.getBlogMessageTotal    : <==      Total: 1
+2021-01-25 11:16:43.576  INFO 20664 --- [http-nio-8080-exec-5] com.fly.myblog.Aspect.LogAspect          : ------doAfter-------
+2021-01-25 11:16:43.576  INFO 20664 --- [http-nio-8080-exec-5] com.fly.myblog.Aspect.LogAspect          : Result : index :: blogMessage
+2021-01-25 11:16:43.590  INFO 20664 --- [http-nio-8080-exec-10] com.fly.myblog.Aspect.LogAspect          : Request: RequestLog{url='http://localhost:8080/messagecomment', ip='0:0:0:0:0:0:0:1', classMethod='com.fly.myblog.controller.MessageController.messages', args=[{}]}
+2021-01-25 11:16:43.591 DEBUG 20664 --- [http-nio-8080-exec-10] c.f.m.d.M.findByParentIdNotNull          : ==>  Preparing: select * from myblog.t_message c where c.parent_message_id = ? order by c.create_time desc
+2021-01-25 11:16:43.591 DEBUG 20664 --- [http-nio-8080-exec-10] c.f.m.d.M.findByParentIdNotNull          : ==> Parameters: -1(Long)
+2021-01-25 11:16:43.594 DEBUG 20664 --- [http-nio-8080-exec-10] c.f.m.d.M.findByParentIdNotNull          : <==      Total: 3
+2021-01-25 11:16:43.594 DEBUG 20664 --- [http-nio-8080-exec-10] c.f.m.dao.MessageDao.findByParentIdNull  : ==>  Preparing: select * from myblog.t_message c where c.parent_message_id = ? order by c.create_time desc
+2021-01-25 11:16:43.595 DEBUG 20664 --- [http-nio-8080-exec-10] c.f.m.dao.MessageDao.findByParentIdNull  : ==> Parameters: 105(Long)
+2021-01-25 11:16:43.596 DEBUG 20664 --- [http-nio-8080-exec-10] c.f.m.dao.MessageDao.findByParentIdNull  : <==      Total: 2
+2021-01-25 11:16:43.597 DEBUG 20664 --- [http-nio-8080-exec-10] c.f.m.dao.MessageDao.findByReplayId      : ==>  Preparing: select * from myblog.t_message c where c.parent_message_id = ? order by c.create_time desc
+2021-01-25 11:16:43.598 DEBUG 20664 --- [http-nio-8080-exec-10] c.f.m.dao.MessageDao.findByReplayId      : ==> Parameters: 106(Long)
+2021-01-25 11:16:43.598 DEBUG 20664 --- [http-nio-8080-exec-10] c.f.m.dao.MessageDao.findByReplayId      : <==      Total: 0
+2021-01-25 11:16:43.599 DEBUG 20664 --- [http-nio-8080-exec-10] c.f.m.dao.MessageDao.findByReplayId      : ==>  Preparing: select * from myblog.t_message c where c.parent_message_id = ? order by c.create_time desc
+2021-01-25 11:16:43.600 DEBUG 20664 --- [http-nio-8080-exec-10] c.f.m.dao.MessageDao.findByReplayId      : ==> Parameters: 107(Long)
+2021-01-25 11:16:43.600 DEBUG 20664 --- [http-nio-8080-exec-10] c.f.m.dao.MessageDao.findByReplayId      : <==      Total: 1
+2021-01-25 11:16:43.601 DEBUG 20664 --- [http-nio-8080-exec-10] c.f.m.dao.MessageDao.findByReplayId      : ==>  Preparing: select * from myblog.t_message c where c.parent_message_id = ? order by c.create_time desc
+2021-01-25 11:16:43.601 DEBUG 20664 --- [http-nio-8080-exec-10] c.f.m.dao.MessageDao.findByReplayId      : ==> Parameters: 108(Long)
+2021-01-25 11:16:43.602 DEBUG 20664 --- [http-nio-8080-exec-10] c.f.m.dao.MessageDao.findByReplayId      : <==      Total: 0
+2021-01-25 11:16:43.602 DEBUG 20664 --- [http-nio-8080-exec-10] c.f.m.dao.MessageDao.findByParentIdNull  : ==>  Preparing: select * from myblog.t_message c where c.parent_message_id = ? order by c.create_time desc
+2021-01-25 11:16:43.602 DEBUG 20664 --- [http-nio-8080-exec-10] c.f.m.dao.MessageDao.findByParentIdNull  : ==> Parameters: 103(Long)
+2021-01-25 11:16:43.603 DEBUG 20664 --- [http-nio-8080-exec-10] c.f.m.dao.MessageDao.findByParentIdNull  : <==      Total: 1
+2021-01-25 11:16:43.603 DEBUG 20664 --- [http-nio-8080-exec-10] c.f.m.dao.MessageDao.findByReplayId      : ==>  Preparing: select * from myblog.t_message c where c.parent_message_id = ? order by c.create_time desc
+2021-01-25 11:16:43.603 DEBUG 20664 --- [http-nio-8080-exec-10] c.f.m.dao.MessageDao.findByReplayId      : ==> Parameters: 104(Long)
+2021-01-25 11:16:43.605 DEBUG 20664 --- [http-nio-8080-exec-10] c.f.m.dao.MessageDao.findByReplayId      : <==      Total: 0
+2021-01-25 11:16:43.605 DEBUG 20664 --- [http-nio-8080-exec-10] c.f.m.dao.MessageDao.findByParentIdNull  : ==>  Preparing: select * from myblog.t_message c where c.parent_message_id = ? order by c.create_time desc
+2021-01-25 11:16:43.606 DEBUG 20664 --- [http-nio-8080-exec-10] c.f.m.dao.MessageDao.findByParentIdNull  : ==> Parameters: 100(Long)
+2021-01-25 11:16:43.606 DEBUG 20664 --- [http-nio-8080-exec-10] c.f.m.dao.MessageDao.findByParentIdNull  : <==      Total: 0
+2021-01-25 11:16:43.607  INFO 20664 --- [http-nio-8080-exec-10] com.fly.myblog.Aspect.LogAspect          : ------doAfter-------
+2021-01-25 11:16:43.607  INFO 20664 --- [http-nio-8080-exec-10] com.fly.myblog.Aspect.LogAspect          : Result : message :: messageList
+2021-01-25 11:16:46.115  INFO 20664 --- [http-nio-8080-exec-8] com.fly.myblog.Aspect.LogAspect          : Request: RequestLog{url='http://localhost:8080/friends', ip='0:0:0:0:0:0:0:1', classMethod='com.fly.myblog.controller.FriendsShowController.friends', args=[{}]}
+2021-01-25 11:16:46.119 DEBUG 20664 --- [http-nio-8080-exec-8] c.f.m.dao.FriendLinkDao.listFriendLink   : ==>  Preparing: SELECT * from myblog.t_friend order by t_friend.create_time desc
+2021-01-25 11:16:46.119 DEBUG 20664 --- [http-nio-8080-exec-8] c.f.m.dao.FriendLinkDao.listFriendLink   : ==> Parameters: 
+2021-01-25 11:16:46.120 DEBUG 20664 --- [http-nio-8080-exec-8] c.f.m.dao.FriendLinkDao.listFriendLink   : <==      Total: 2
+2021-01-25 11:16:46.121  INFO 20664 --- [http-nio-8080-exec-8] com.fly.myblog.Aspect.LogAspect          : ------doAfter-------
+2021-01-25 11:16:46.121  INFO 20664 --- [http-nio-8080-exec-8] com.fly.myblog.Aspect.LogAspect          : Result : friends
+2021-01-25 11:16:46.170  INFO 20664 --- [http-nio-8080-exec-10] com.fly.myblog.Aspect.LogAspect          : Request: RequestLog{url='http://localhost:8080/footer/blogmessage', ip='0:0:0:0:0:0:0:1', classMethod='com.fly.myblog.controller.IndexController.blogMessage', args=[{}]}
+2021-01-25 11:16:46.171 DEBUG 20664 --- [http-nio-8080-exec-10] com.fly.myblog.dao.BlogDao.getBlogTotal  : ==>  Preparing: select count(*) from myblog.t_blog
+2021-01-25 11:16:46.171 DEBUG 20664 --- [http-nio-8080-exec-10] com.fly.myblog.dao.BlogDao.getBlogTotal  : ==> Parameters: 
+2021-01-25 11:16:46.173 DEBUG 20664 --- [http-nio-8080-exec-10] com.fly.myblog.dao.BlogDao.getBlogTotal  : <==      Total: 1
+2021-01-25 11:16:46.176 DEBUG 20664 --- [http-nio-8080-exec-10] c.f.myblog.dao.BlogDao.getBlogViewTotal  : ==>  Preparing: select coalesce (sum(views),0) from myblog.t_blog
+2021-01-25 11:16:46.176 DEBUG 20664 --- [http-nio-8080-exec-10] c.f.myblog.dao.BlogDao.getBlogViewTotal  : ==> Parameters: 
+2021-01-25 11:16:46.177 DEBUG 20664 --- [http-nio-8080-exec-10] c.f.myblog.dao.BlogDao.getBlogViewTotal  : <==      Total: 1
+2021-01-25 11:16:46.178 DEBUG 20664 --- [http-nio-8080-exec-10] c.f.m.dao.BlogDao.getBlogCommentTotal    : ==>  Preparing: select count(*) from myblog.t_comment
+2021-01-25 11:16:46.178 DEBUG 20664 --- [http-nio-8080-exec-10] c.f.m.dao.BlogDao.getBlogCommentTotal    : ==> Parameters: 
+2021-01-25 11:16:46.180 DEBUG 20664 --- [http-nio-8080-exec-10] c.f.m.dao.BlogDao.getBlogCommentTotal    : <==      Total: 1
+2021-01-25 11:16:46.182 DEBUG 20664 --- [http-nio-8080-exec-10] c.f.m.dao.BlogDao.getBlogMessageTotal    : ==>  Preparing: select count(*) from myblog.t_message
+2021-01-25 11:16:46.182 DEBUG 20664 --- [http-nio-8080-exec-10] c.f.m.dao.BlogDao.getBlogMessageTotal    : ==> Parameters: 
+2021-01-25 11:16:46.185 DEBUG 20664 --- [http-nio-8080-exec-10] c.f.m.dao.BlogDao.getBlogMessageTotal    : <==      Total: 1
+2021-01-25 11:16:46.186  INFO 20664 --- [http-nio-8080-exec-10] com.fly.myblog.Aspect.LogAspect          : ------doAfter-------
+2021-01-25 11:16:46.186  INFO 20664 --- [http-nio-8080-exec-10] com.fly.myblog.Aspect.LogAspect          : Result : index :: blogMessage
+2021-01-25 11:16:47.702 DEBUG 20664 --- [http-nio-8080-exec-7] c.fly.myblog.dao.PictureDao.listPicture  : ==>  Preparing: select * from myblog.t_picture order by t_picture.id desc
+2021-01-25 11:16:47.702 DEBUG 20664 --- [http-nio-8080-exec-7] c.fly.myblog.dao.PictureDao.listPicture  : ==> Parameters: 
+2021-01-25 11:16:47.703 DEBUG 20664 --- [http-nio-8080-exec-7] c.fly.myblog.dao.PictureDao.listPicture  : <==      Total: 2
+2021-01-25 11:16:47.820  INFO 20664 --- [http-nio-8080-exec-1] com.fly.myblog.Aspect.LogAspect          : Request: RequestLog{url='http://localhost:8080/footer/blogmessage', ip='0:0:0:0:0:0:0:1', classMethod='com.fly.myblog.controller.IndexController.blogMessage', args=[{}]}
+2021-01-25 11:16:47.821 DEBUG 20664 --- [http-nio-8080-exec-1] com.fly.myblog.dao.BlogDao.getBlogTotal  : ==>  Preparing: select count(*) from myblog.t_blog
+2021-01-25 11:16:47.822 DEBUG 20664 --- [http-nio-8080-exec-1] com.fly.myblog.dao.BlogDao.getBlogTotal  : ==> Parameters: 
+2021-01-25 11:16:47.823 DEBUG 20664 --- [http-nio-8080-exec-1] com.fly.myblog.dao.BlogDao.getBlogTotal  : <==      Total: 1
+2021-01-25 11:16:47.825 DEBUG 20664 --- [http-nio-8080-exec-1] c.f.myblog.dao.BlogDao.getBlogViewTotal  : ==>  Preparing: select coalesce (sum(views),0) from myblog.t_blog
+2021-01-25 11:16:47.825 DEBUG 20664 --- [http-nio-8080-exec-1] c.f.myblog.dao.BlogDao.getBlogViewTotal  : ==> Parameters: 
+2021-01-25 11:16:47.826 DEBUG 20664 --- [http-nio-8080-exec-1] c.f.myblog.dao.BlogDao.getBlogViewTotal  : <==      Total: 1
+2021-01-25 11:16:47.827 DEBUG 20664 --- [http-nio-8080-exec-1] c.f.m.dao.BlogDao.getBlogCommentTotal    : ==>  Preparing: select count(*) from myblog.t_comment
+2021-01-25 11:16:47.827 DEBUG 20664 --- [http-nio-8080-exec-1] c.f.m.dao.BlogDao.getBlogCommentTotal    : ==> Parameters: 
+2021-01-25 11:16:47.828 DEBUG 20664 --- [http-nio-8080-exec-1] c.f.m.dao.BlogDao.getBlogCommentTotal    : <==      Total: 1
+2021-01-25 11:16:47.830 DEBUG 20664 --- [http-nio-8080-exec-1] c.f.m.dao.BlogDao.getBlogMessageTotal    : ==>  Preparing: select count(*) from myblog.t_message
+2021-01-25 11:16:47.830 DEBUG 20664 --- [http-nio-8080-exec-1] c.f.m.dao.BlogDao.getBlogMessageTotal    : ==> Parameters: 
+2021-01-25 11:16:47.831 DEBUG 20664 --- [http-nio-8080-exec-1] c.f.m.dao.BlogDao.getBlogMessageTotal    : <==      Total: 1
+2021-01-25 11:16:47.832  INFO 20664 --- [http-nio-8080-exec-1] com.fly.myblog.Aspect.LogAspect          : ------doAfter-------
+2021-01-25 11:16:47.832  INFO 20664 --- [http-nio-8080-exec-1] com.fly.myblog.Aspect.LogAspect          : Result : index :: blogMessage
+2021-01-25 11:16:51.063  INFO 20664 --- [http-nio-8080-exec-8] com.fly.myblog.Aspect.LogAspect          : Request: RequestLog{url='http://localhost:8080/about', ip='0:0:0:0:0:0:0:1', classMethod='com.fly.myblog.controller.AboutShowController.about', args=[]}
+2021-01-25 11:16:51.065  INFO 20664 --- [http-nio-8080-exec-8] com.fly.myblog.Aspect.LogAspect          : ------doAfter-------
+2021-01-25 11:16:51.066  INFO 20664 --- [http-nio-8080-exec-8] com.fly.myblog.Aspect.LogAspect          : Result : about
+2021-01-25 11:16:51.108  INFO 20664 --- [http-nio-8080-exec-8] com.fly.myblog.Aspect.LogAspect          : Request: RequestLog{url='http://localhost:8080/footer/blogmessage', ip='0:0:0:0:0:0:0:1', classMethod='com.fly.myblog.controller.IndexController.blogMessage', args=[{}]}
+2021-01-25 11:16:51.109 DEBUG 20664 --- [http-nio-8080-exec-8] com.fly.myblog.dao.BlogDao.getBlogTotal  : ==>  Preparing: select count(*) from myblog.t_blog
+2021-01-25 11:16:51.109 DEBUG 20664 --- [http-nio-8080-exec-8] com.fly.myblog.dao.BlogDao.getBlogTotal  : ==> Parameters: 
+2021-01-25 11:16:51.111 DEBUG 20664 --- [http-nio-8080-exec-8] com.fly.myblog.dao.BlogDao.getBlogTotal  : <==      Total: 1
+2021-01-25 11:16:51.112 DEBUG 20664 --- [http-nio-8080-exec-8] c.f.myblog.dao.BlogDao.getBlogViewTotal  : ==>  Preparing: select coalesce (sum(views),0) from myblog.t_blog
+2021-01-25 11:16:51.112 DEBUG 20664 --- [http-nio-8080-exec-8] c.f.myblog.dao.BlogDao.getBlogViewTotal  : ==> Parameters: 
+2021-01-25 11:16:51.114 DEBUG 20664 --- [http-nio-8080-exec-8] c.f.myblog.dao.BlogDao.getBlogViewTotal  : <==      Total: 1
+2021-01-25 11:16:51.115 DEBUG 20664 --- [http-nio-8080-exec-8] c.f.m.dao.BlogDao.getBlogCommentTotal    : ==>  Preparing: select count(*) from myblog.t_comment
+2021-01-25 11:16:51.115 DEBUG 20664 --- [http-nio-8080-exec-8] c.f.m.dao.BlogDao.getBlogCommentTotal    : ==> Parameters: 
+2021-01-25 11:16:51.116 DEBUG 20664 --- [http-nio-8080-exec-8] c.f.m.dao.BlogDao.getBlogCommentTotal    : <==      Total: 1
+2021-01-25 11:16:51.117 DEBUG 20664 --- [http-nio-8080-exec-8] c.f.m.dao.BlogDao.getBlogMessageTotal    : ==>  Preparing: select count(*) from myblog.t_message
+2021-01-25 11:16:51.117 DEBUG 20664 --- [http-nio-8080-exec-8] c.f.m.dao.BlogDao.getBlogMessageTotal    : ==> Parameters: 
+2021-01-25 11:16:51.118 DEBUG 20664 --- [http-nio-8080-exec-8] c.f.m.dao.BlogDao.getBlogMessageTotal    : <==      Total: 1
+2021-01-25 11:16:51.119  INFO 20664 --- [http-nio-8080-exec-8] com.fly.myblog.Aspect.LogAspect          : ------doAfter-------
+2021-01-25 11:16:51.119  INFO 20664 --- [http-nio-8080-exec-8] com.fly.myblog.Aspect.LogAspect          : Result : index :: blogMessage
+2021-01-25 11:18:22.071  INFO 20664 --- [Thread-9] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2021-01-25 11:18:22.072  INFO 20664 --- [Thread-9] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2021-01-25 11:18:22.081  INFO 20664 --- [Thread-9] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2021-01-25 11:18:22.757  INFO 20664 --- [restartedMain] com.fly.myblog.MyblogApplication         : Starting MyblogApplication on DESKTOP-HML8KQ7 with PID 20664 (started by 集联科技 in D:\搜狗高速下载\github_projects\myblog)
+2021-01-25 11:18:22.758 DEBUG 20664 --- [restartedMain] com.fly.myblog.MyblogApplication         : Running with Spring Boot v2.2.5.RELEASE, Spring v5.2.4.RELEASE
+2021-01-25 11:18:22.758  INFO 20664 --- [restartedMain] com.fly.myblog.MyblogApplication         : The following profiles are active: dev
+2021-01-25 11:18:23.308  INFO 20664 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2021-01-25 11:18:23.310  INFO 20664 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-01-25 11:18:23.310  INFO 20664 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.31]
+2021-01-25 11:18:23.344  INFO 20664 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-01-25 11:18:23.345  INFO 20664 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 584 ms
+2021-01-25 11:18:23.811  INFO 20664 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-01-25 11:18:23.848  INFO 20664 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2021-01-25 11:18:24.078  INFO 20664 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2021-01-25 11:18:24.089  INFO 20664 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2021-01-25 11:18:24.090  INFO 20664 --- [restartedMain] com.fly.myblog.MyblogApplication         : Started MyblogApplication in 1.372 seconds (JVM running for 172.622)
+2021-01-25 11:18:24.091  INFO 20664 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2021-01-25 11:18:27.133  INFO 20664 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-01-25 11:18:27.134  INFO 20664 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-01-25 11:18:27.142  INFO 20664 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 8 ms
+2021-01-25 11:18:27.145  INFO 20664 --- [http-nio-8080-exec-1] com.fly.myblog.Aspect.LogAspect          : Request: RequestLog{url='http://localhost:8080/about', ip='0:0:0:0:0:0:0:1', classMethod='com.fly.myblog.controller.AboutShowController.about', args=[]}
+2021-01-25 11:18:27.147  INFO 20664 --- [http-nio-8080-exec-1] com.fly.myblog.Aspect.LogAspect          : ------doAfter-------
+2021-01-25 11:18:27.147  INFO 20664 --- [http-nio-8080-exec-1] com.fly.myblog.Aspect.LogAspect          : Result : about
+2021-01-25 11:18:27.210  INFO 20664 --- [http-nio-8080-exec-1] com.fly.myblog.Aspect.LogAspect          : Request: RequestLog{url='http://localhost:8080/footer/blogmessage', ip='0:0:0:0:0:0:0:1', classMethod='com.fly.myblog.controller.IndexController.blogMessage', args=[{}]}
+2021-01-25 11:18:27.212  INFO 20664 --- [http-nio-8080-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
+2021-01-25 11:18:27.217  INFO 20664 --- [http-nio-8080-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
+2021-01-25 11:18:27.220 DEBUG 20664 --- [http-nio-8080-exec-1] com.fly.myblog.dao.BlogDao.getBlogTotal  : ==>  Preparing: select count(*) from myblog.t_blog
+2021-01-25 11:18:27.221 DEBUG 20664 --- [http-nio-8080-exec-1] com.fly.myblog.dao.BlogDao.getBlogTotal  : ==> Parameters: 
+2021-01-25 11:18:27.223 DEBUG 20664 --- [http-nio-8080-exec-1] com.fly.myblog.dao.BlogDao.getBlogTotal  : <==      Total: 1
+2021-01-25 11:18:27.225 DEBUG 20664 --- [http-nio-8080-exec-1] c.f.myblog.dao.BlogDao.getBlogViewTotal  : ==>  Preparing: select coalesce (sum(views),0) from myblog.t_blog
+2021-01-25 11:18:27.225 DEBUG 20664 --- [http-nio-8080-exec-1] c.f.myblog.dao.BlogDao.getBlogViewTotal  : ==> Parameters: 
+2021-01-25 11:18:27.226 DEBUG 20664 --- [http-nio-8080-exec-1] c.f.myblog.dao.BlogDao.getBlogViewTotal  : <==      Total: 1
+2021-01-25 11:18:27.227 DEBUG 20664 --- [http-nio-8080-exec-1] c.f.m.dao.BlogDao.getBlogCommentTotal    : ==>  Preparing: select count(*) from myblog.t_comment
+2021-01-25 11:18:27.227 DEBUG 20664 --- [http-nio-8080-exec-1] c.f.m.dao.BlogDao.getBlogCommentTotal    : ==> Parameters: 
+2021-01-25 11:18:27.229 DEBUG 20664 --- [http-nio-8080-exec-1] c.f.m.dao.BlogDao.getBlogCommentTotal    : <==      Total: 1
+2021-01-25 11:18:27.230 DEBUG 20664 --- [http-nio-8080-exec-1] c.f.m.dao.BlogDao.getBlogMessageTotal    : ==>  Preparing: select count(*) from myblog.t_message
+2021-01-25 11:18:27.231 DEBUG 20664 --- [http-nio-8080-exec-1] c.f.m.dao.BlogDao.getBlogMessageTotal    : ==> Parameters: 
+2021-01-25 11:18:27.234 DEBUG 20664 --- [http-nio-8080-exec-1] c.f.m.dao.BlogDao.getBlogMessageTotal    : <==      Total: 1
+2021-01-25 11:18:27.234  INFO 20664 --- [http-nio-8080-exec-1] com.fly.myblog.Aspect.LogAspect          : ------doAfter-------
+2021-01-25 11:18:27.234  INFO 20664 --- [http-nio-8080-exec-1] com.fly.myblog.Aspect.LogAspect          : Result : index :: blogMessage
+2021-01-25 11:18:28.989  INFO 20664 --- [http-nio-8080-exec-7] com.fly.myblog.Aspect.LogAspect          : Request: RequestLog{url='http://localhost:8080/about', ip='0:0:0:0:0:0:0:1', classMethod='com.fly.myblog.controller.AboutShowController.about', args=[]}
+2021-01-25 11:18:28.989  INFO 20664 --- [http-nio-8080-exec-7] com.fly.myblog.Aspect.LogAspect          : ------doAfter-------
+2021-01-25 11:18:28.989  INFO 20664 --- [http-nio-8080-exec-7] com.fly.myblog.Aspect.LogAspect          : Result : about
+2021-01-25 11:18:29.053  INFO 20664 --- [http-nio-8080-exec-4] com.fly.myblog.Aspect.LogAspect          : Request: RequestLog{url='http://localhost:8080/footer/blogmessage', ip='0:0:0:0:0:0:0:1', classMethod='com.fly.myblog.controller.IndexController.blogMessage', args=[{}]}
+2021-01-25 11:18:29.054 DEBUG 20664 --- [http-nio-8080-exec-4] com.fly.myblog.dao.BlogDao.getBlogTotal  : ==>  Preparing: select count(*) from myblog.t_blog
+2021-01-25 11:18:29.055 DEBUG 20664 --- [http-nio-8080-exec-4] com.fly.myblog.dao.BlogDao.getBlogTotal  : ==> Parameters: 
+2021-01-25 11:18:29.057 DEBUG 20664 --- [http-nio-8080-exec-4] com.fly.myblog.dao.BlogDao.getBlogTotal  : <==      Total: 1
+2021-01-25 11:18:29.058 DEBUG 20664 --- [http-nio-8080-exec-4] c.f.myblog.dao.BlogDao.getBlogViewTotal  : ==>  Preparing: select coalesce (sum(views),0) from myblog.t_blog
+2021-01-25 11:18:29.058 DEBUG 20664 --- [http-nio-8080-exec-4] c.f.myblog.dao.BlogDao.getBlogViewTotal  : ==> Parameters: 
+2021-01-25 11:18:29.059 DEBUG 20664 --- [http-nio-8080-exec-4] c.f.myblog.dao.BlogDao.getBlogViewTotal  : <==      Total: 1
+2021-01-25 11:18:29.060 DEBUG 20664 --- [http-nio-8080-exec-4] c.f.m.dao.BlogDao.getBlogCommentTotal    : ==>  Preparing: select count(*) from myblog.t_comment
+2021-01-25 11:18:29.061 DEBUG 20664 --- [http-nio-8080-exec-4] c.f.m.dao.BlogDao.getBlogCommentTotal    : ==> Parameters: 
+2021-01-25 11:18:29.062 DEBUG 20664 --- [http-nio-8080-exec-4] c.f.m.dao.BlogDao.getBlogCommentTotal    : <==      Total: 1
+2021-01-25 11:18:29.063 DEBUG 20664 --- [http-nio-8080-exec-4] c.f.m.dao.BlogDao.getBlogMessageTotal    : ==>  Preparing: select count(*) from myblog.t_message
+2021-01-25 11:18:29.063 DEBUG 20664 --- [http-nio-8080-exec-4] c.f.m.dao.BlogDao.getBlogMessageTotal    : ==> Parameters: 
+2021-01-25 11:18:29.064 DEBUG 20664 --- [http-nio-8080-exec-4] c.f.m.dao.BlogDao.getBlogMessageTotal    : <==      Total: 1
+2021-01-25 11:18:29.065  INFO 20664 --- [http-nio-8080-exec-4] com.fly.myblog.Aspect.LogAspect          : ------doAfter-------
+2021-01-25 11:18:29.065  INFO 20664 --- [http-nio-8080-exec-4] com.fly.myblog.Aspect.LogAspect          : Result : index :: blogMessage
