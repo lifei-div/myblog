@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.fly.myblog.dao.TypeDao">
+
+    <!-- 查询所以类型-->
+    <select id="getAllType" resultType="com.fly.myblog.entity.Type">
+        select * from myblog.t_type
+    </select>
+
+    <!-- 根据名称查询类型-->
+    <select id="getTypeByName" resultType="com.fly.myblog.entity.Type">
+        select * from myblog.t_type where name = #{name}
+    </select>
+
+    <!-- 添加分类-->
+    <insert id="saveType" parameterType="com.fly.myblog.entity.Type">
+        insert into myblog.t_type value (#{id},#{name})
+    </insert>
+
+    <!-- 根据ID查询类型-->
+    <select id="getTypeById" resultType="com.fly.myblog.entity.Type">
+        select id,name from myblog.t_type where id = #{id}
+    </select>
+
+    <!-- 修改-->
+    <update id="updateType" parameterType="com.fly.myblog.entity.Type">
+        update myblog.t_type set name = #{name} where id = #{id};
+    </update>
+
+    <!-- 根据ID删除-->
+    <delete id="deleteType">
+        delete  from myblog.t_type where  id = #{id}
+    </delete>
+
+
+
+    <resultMap id="type" type="com.fly.myblog.entity.Type">
+        <id property="id" column="tid"/>
+        <result property="name" column="name"/>
+        <collection property="blogs" ofType="com.fly.myblog.entity.Blog">
+            <id property="id" column="bid"/>
+            <result property="title" column="title"/>
+            <result property="typeId" column="type_id"/>
+        </collection>
+    </resultMap>
+
+<!--    查询所有分类 博客和分类是多对一的关系-->
+    <select id="getAllTypeAndBlog" resultMap="type">
+        select t.id tid, t.name, b.id bid, b.title,b.type_id
+         from myblog.t_type t,myblog.t_blog b
+        where t.id = b.type_id
+    </select>
+
+</mapper>

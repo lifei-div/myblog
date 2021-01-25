@@ -1,0 +1,24 @@
+2021-01-16 10:24:19.208  INFO 15244 --- [main] com.fly.myblog.MyblogApplicationTests    : Starting MyblogApplicationTests on DESKTOP-HML8KQ7 with PID 15244 (started by 集联科技 in D:\搜狗高速下载\github_projects\myblog)
+2021-01-16 10:24:19.209  INFO 15244 --- [main] com.fly.myblog.MyblogApplicationTests    : The following profiles are active: pro
+2021-01-16 10:24:26.755  INFO 15244 --- [main] com.fly.myblog.MyblogApplicationTests    : Started MyblogApplicationTests in 9.974 seconds (JVM running for 11.876)
+2021-01-16 14:55:49.798  INFO 10444 --- [main] com.fly.myblog.MyblogApplicationTests    : Starting MyblogApplicationTests on DESKTOP-HML8KQ7 with PID 10444 (started by 集联科技 in D:\搜狗高速下载\github_projects\myblog)
+2021-01-16 14:55:49.801  INFO 10444 --- [main] com.fly.myblog.MyblogApplicationTests    : The following profiles are active: pro
+2021-01-16 14:55:53.881  INFO 10444 --- [main] com.fly.myblog.MyblogApplicationTests    : Started MyblogApplicationTests in 4.605 seconds (JVM running for 5.823)
+2021-01-16 15:08:48.089  INFO 26104 --- [main] com.fly.myblog.MyblogApplicationTests    : Starting MyblogApplicationTests on DESKTOP-HML8KQ7 with PID 26104 (started by 集联科技 in D:\搜狗高速下载\github_projects\myblog)
+2021-01-16 15:08:48.090  INFO 26104 --- [main] com.fly.myblog.MyblogApplicationTests    : The following profiles are active: pro
+2021-01-16 15:08:52.507  INFO 26104 --- [main] com.fly.myblog.MyblogApplicationTests    : Started MyblogApplicationTests in 4.883 seconds (JVM running for 5.931)
+2021-01-16 15:18:15.291  INFO 26576 --- [main] com.fly.myblog.MyblogApplicationTests    : Starting MyblogApplicationTests on DESKTOP-HML8KQ7 with PID 26576 (started by 集联科技 in D:\搜狗高速下载\github_projects\myblog)
+2021-01-16 15:18:15.293  INFO 26576 --- [main] com.fly.myblog.MyblogApplicationTests    : The following profiles are active: pro
+2021-01-16 15:18:19.033  INFO 26576 --- [main] com.fly.myblog.MyblogApplicationTests    : Started MyblogApplicationTests in 4.357 seconds (JVM running for 5.164)
+2021-01-16 15:47:07.747  INFO 976 --- [restartedMain] com.fly.myblog.MyblogApplication         : Starting MyblogApplication on DESKTOP-HML8KQ7 with PID 976 (started by 闆嗚仈绉戞妧 in D:\鎼滅嫍楂橀�熶笅杞絓github_projects\myblog)
+2021-01-16 15:47:07.748  INFO 976 --- [restartedMain] com.fly.myblog.MyblogApplication         : The following profiles are active: pro
+2021-01-16 15:47:09.842  INFO 976 --- [restartedMain] com.fly.myblog.MyblogApplication         : Started MyblogApplication in 2.443 seconds (JVM running for 3.454)
+2021-01-16 15:47:43.146  INFO 976 --- [http-nio-8081-exec-1] com.fly.myblog.Aspect.LogAspect          : Request: RequestLog{url='http://localhost:8081/', ip='0:0:0:0:0:0:0:1', classMethod='com.fly.myblog.controller.IndexController.index', args=[{}, 1, {}]}
+2021-01-16 15:47:43.719  INFO 976 --- [http-nio-8081-exec-1] com.fly.myblog.Aspect.LogAspect          : ------doAfter-------
+2021-01-16 15:47:43.719  INFO 976 --- [http-nio-8081-exec-1] com.fly.myblog.Aspect.LogAspect          : Result : index
+2021-01-16 15:47:44.249  INFO 976 --- [http-nio-8081-exec-8] com.fly.myblog.Aspect.LogAspect          : Request: RequestLog{url='http://localhost:8081/footer/blogmessage', ip='0:0:0:0:0:0:0:1', classMethod='com.fly.myblog.controller.IndexController.blogMessage', args=[{}]}
+2021-01-16 15:47:44.671  INFO 976 --- [http-nio-8081-exec-8] com.fly.myblog.Aspect.LogAspect          : ------doAfter-------
+2021-01-16 15:47:44.672  INFO 976 --- [http-nio-8081-exec-8] com.fly.myblog.Aspect.LogAspect          : Result : index :: blogMessage
+2021-01-16 15:50:10.961  INFO 5896 --- [main] com.fly.myblog.MyblogApplicationTests    : Starting MyblogApplicationTests on DESKTOP-HML8KQ7 with PID 5896 (started by 集联科技 in D:\搜狗高速下载\github_projects\myblog)
+2021-01-16 15:50:10.961  INFO 5896 --- [main] com.fly.myblog.MyblogApplicationTests    : The following profiles are active: pro
+2021-01-16 15:50:14.499  INFO 5896 --- [main] com.fly.myblog.MyblogApplicationTests    : Started MyblogApplicationTests in 3.964 seconds (JVM running for 4.817)
